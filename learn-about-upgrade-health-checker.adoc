@@ -1,0 +1,20 @@
+---
+sidebar: sidebar 
+permalink: learn-about-upgrade-health-checker.html 
+keywords: upgrade, health, checker, ontap 
+summary: Upgrade Health Checker 是一款升級諮詢服務工具，可提供詳細資訊和建議，協助您成功完成 ONTAP 升級。 
+---
+= 了解 Upgrade Health Checker
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Upgrade Health Checker 是一款升級諮詢服務工具，可提供詳細資訊和建議，協助您成功完成 ONTAP 升級。它會進行全面的現場健康檢查，識別您在執行升級之前必須解決的障礙和警告。
+
+Upgrade Health Checker 可以整合到您現有的自動化和編排框架中，以協助您升級單一或多個叢集。它使用您最新的 AutoSupport 資料產生詳細、準確的報告，其中包含與叢集相關的風險資訊、您要升級的 ONTAP 版本中的新功能和增強功能，以及在嘗試 ONTAP 升級之前需要採取的任何措施。
+
+若要深入瞭解 Upgrade Health Checker ，請參閱 link:faq-upgrade-health-checker.html["升級健全狀況檢查程式常見問題"] 。

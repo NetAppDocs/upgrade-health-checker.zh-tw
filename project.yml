@@ -1,0 +1,35 @@
+---
+settings:
+  name: Upgrade Health Checker
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: zh-tw,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn
+sidebar:
+  entries:
+  - title: 升級 Health Checker 文件
+    url: "/index.html"
+  - title: 版本資訊
+    entries:
+    - title: 新增功能
+      url: "/whats-new.html"
+  - title: 開始使用
+    entries:
+    - title: 了解 Upgrade Health Checker
+      url: "/learn-about-upgrade-health-checker.html"
+    - title: 設定 Upgrade Health Checker
+      url: "/set-up-upgrade-health-checker.html"
+  - title: 使用 Upgrade Health Checker
+    entries:
+    - title: 產生 ONTAP 升級報告
+      url: "/generate-report-upgrade-health-checker.html"
+    - title: 自動產生報告
+      url: "/automate-report-upgrade-health-checker.html"
+  - title: 升級健全狀況檢查程式的輸入參數
+    url: "/upgrade-health-checker-input-parameters.html"
+  - title: 常見問題
+    url: "/faq-upgrade-health-checker.html"
+  - title: 法律聲明
+    url: "/legal-notices.html"

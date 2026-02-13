@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: faq-upgrade-health-checker.html 
+keywords: upgrade, health, checker, faq, frequently asked questions, frequently asked questions about upgrade health checker 
+summary: Upgrade Health Checker 常見問題（FAQ）。 
+---
+= 升級健全狀況檢查程式常見問題
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Upgrade Health Checker 常見問題（FAQ）。
+
+
+
+== Upgrade Health Checker 與 Upgrade Advisor 有何不同？
+
+Upgrade Health Checker 是一款本地部署工具，適用於環境規模龐大或複雜、網路存取受限或已部署自動化和編排框架的使用者。Upgrade Advisor 則適用於環境規模較小、偏好基於雲端、以使用者介面為中心的使用者體驗的使用者。
+
+您可以深入瞭解 link:learn-about-upgrade-health-checker.html["升級健全狀況檢查程式"] 和 link:https://docs.netapp.com/us-en/active-iq/upgrade_advisor_overview.html["升級顧問"^]，以確定哪種工具最適合您的需求。
+
+
+
+== 升級健全狀況檢查程式報告包含哪些資訊？
+
+Upgrade Health Checker 報告提供有關升級 ONTAP 叢集之前需要解決的潛在障礙和警告的詳細資訊、與叢集相關的風險，以及有關您要升級到的 ONTAP 版本中的新功能和增強功能的資訊。
+
+
+
+== Upgrade Health Checker 可以在沒有網際網路連線的情況下使用嗎？
+
+您不需要網際網路連線即可執行 Upgrade Health Checker。它會使用您的 ONTAP 叢集目前的組態資料在現場產生升級計劃和報告。
+
+但是，自動工具更新需要網際網路存取。如果您的環境缺乏網際網路連線，請聯絡 NetApp 以取得如何確保您的 Upgrade Health Checker 工具保持最新狀態的指導。
+
+
+
+== Upgrade Health Checker 支援哪些 ONTAP 版本？
+
+升級健全狀況檢查程式支援升級至 ONTAP 9.11.1 及更新版本。

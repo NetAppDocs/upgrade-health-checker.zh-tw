@@ -1,0 +1,152 @@
+---
+sidebar: sidebar 
+permalink: set-up-upgrade-health-checker.html 
+keywords: upgrade, health, checker, set up, download 
+summary: 您可以下載 Upgrade Health Checker，在升級到更新版本的 ONTAP 之前產生現場綜合報告。 
+---
+= 下載並設定 Upgrade Health Checker
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以下載 Upgrade Health Checker，在升級到更新版本的 ONTAP 之前產生現場綜合報告。
+
+.開始之前
+使用以下規格為 Upgrade Health Checker 設定虛擬機器：
+
+* 處理與記憶體：m5.large VM 或同等配置，配備 2 個 vCPU 和 8 GiB RAM。
+* 建議作業系統：Ubuntu 22.04 以獲得最佳相容性。
+* 儲存：提供一個至少 100 GB 的根磁碟區和一個至少 100 GB 的額外 NFS 磁碟區，以確保在虛擬機器遭到入侵時資料能夠保留。
+* 託管需求：將 VM 放置在具有叢集連線和網際網路存取權限的位置，以便實現工具的自動更新。該機器應可透過 HTTPS 存取以下端點以執行自動更新：
++
+** https://api.uhc.netapp.com[]
+** https://gql.aiq.netapp.com[]
++
+如果無法存取網際網路，請諮詢 NetApp 以取得指引。
+
+
+
+* 建議套件：安裝 Web 伺服器以方便存取。
+
+
+此外，請確保虛擬機器可以透過 HTTPS 連接到遙測端點(https://support.netapp.com/[]，以便 NetApp 接收有關升級計劃的 AutoSupport 資訊。
+
+.步驟
+. 下載 Upgrade Health Checker 二進位檔案，方法是 link:https://console.netapp.com/automationHub["導覽至 NetApp Console Automation Hub"] 並找到 Upgrade Health Checker 圖示。
+. 設定 Upgrade Health Checker 虛擬機器，並使用 SSH 將二進位檔案放置在您選擇的位置。
+. 驗證 Upgrade Health Checker 的數位簽章。
++
+Upgrade Health Checker 具有公共代碼簽署憑證 (`UHC-Linux-codesigning-certificate-public.pem`）以及中間憑證和根憑證鏈 (`UHC-Linux-chain-certificates-public.pem`）。
+
++
+.. （選用）根據鏈驗證程式碼簽署憑證：
++
+[listing]
+----
+openssl verify -CAfile UHC-Linux-chain-certificates-public.pem UHC-Linux-codesigning-certificate-public.pem
+----
++
+ `OK` 的輸出結果確認了有效的信任鏈。
+
+.. 從程式碼簽署憑證中提取公開金鑰：
++
+[listing]
+----
+openssl x509 -in UHC-Linux-codesigning-certificate-public.pem -pubkey -noout -out UHC-Linux-public.pub
+----
+.. 使用公開金鑰驗證簽章檔案（(`uhc.sig`）與 Upgrade Health Checker 二進位檔案：
++
+[listing]
+----
+openssl dgst -sha256 -verify UHC-Linux-public.pub -signature uhc.sig uhc
+----
++
+ `Verified OK`的輸出結果確認簽名有效。
+
+
+
+. 為 ONTAP 叢集存取配置服務帳戶和角色。對於透過 Upgrade Health Checker 存取叢集的情況，請將服務角色建立為 REST 角色。
++
+
+NOTE: 您可以建立一個 Ansible playbook，以自動將角色和使用者部署到所有 ONTAP 叢集。
+
++
+您必須為 HTTP 應用程式建立服務帳戶。請使用以下 CLI 指令設定必要的權限：
+
++
+[source, cli]
+----
+security login rest-role create -role uhctool -api /api -access readonly -vserver
+
+security login rest-role create -role uhctool -api /api/support/autosupport -access read_create_modify -vserver
+
+security login rest-role create -role uhctool -api /api/support/autosupport/messages -access read_create_modify -vserver
+
+vserver services web access create -name spi -role uhctool -vserver
+
+security login create -user-or-group-name uhctool -role uhctool -application http -authentication-method password
+
+security login create -user-or-group-name uhctool -role uhctool -application ssh -authentication-method password
+----
+. 設定憑證管理以確保對應用程式的存取安全。
++
+例如，如果您有 CyberArk 和 Conjur，您可以設定您的環境，以避免透過 yaml 檔案或命令列傳遞認證資料。
+
++
+.. 建立所需的 CyberArk 保險箱：
++
+... 建立一個 Safe（Main-Conjur-Safe），用於保存應用程式憑證和金鑰
+... 建立一個安全庫（API 憑證安全庫），用於存放 Conjur 主機 ID 和 API 金鑰
+... 建立一個存放必要憑證的保險箱（Conjur-SSL-Certificate）
+
+
+.. 為該應用程式建立設定檔（Conjur.conf）和身分檔（Conjur.identity）：
++
+... Conjur.conf
++
+[listing]
+----
+account:
+plugins:[]
+appliance_url: https://FQDN
+cert_file: /etc/conjur.pem
+----
+... Conjur.identity
++
+[listing]
+----
+machine https://FQDN/authn
+login host /prodvault/devops/<Main-Conjur-Safe>/host1
+password XXXXXX
+----
+
+
+
+
++
+以下是如何在 Ansible playbook 中使用 CyberArk 和 Conjur 的範例：
+
++
+.. 在 Ansible 主機上安裝 Conjur Ansible Collection，其中包含 Conjur Ansible Lookup Plugin：
++
+[listing]
+----
+ansible-galaxy collection install cyberark.conjur
+----
+.. 在 YAML 檔案中建立一個任務，用於從 CyberArk 取得使用者名稱和密碼：
++
+[listing]
+----
+conjur_username: "{{ lookup('cyberark.conjur.conjur_variable', 'prodvault/devops/<Main-Conjur-Safe>/<Account name>/username', validate_certs=false) }}"
+conjur_password: "{{ lookup('cyberark.conjur.conjur_variable', 'prodvault/devops/<Main-Conjur-Safe>/<Account name>/password', validate_certs=false) }}"
+----
+
+
+
+
+.接下來呢？
+您可以使用升級健康檢查器，透過link:generate-report-upgrade-health-checker.html["產生升級報告"]來協助您規劃 ONTAP 升級。

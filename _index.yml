@@ -1,0 +1,27 @@
+---
+indexpage:
+  title: 升級 Health Checker 文件
+  summary: Upgrade Health Checker 會執行全面的健全狀況檢查，以協助您規劃並執行成功的 ONTAP 升級。
+  keywords: upgrade health checker, ontap, upgrade advisor
+  lead: Upgrade Health Checker 會執行全面的健全狀況檢查，以協助您規劃並執行成功的 ONTAP 升級。
+  tiles:
+  - title: 開始使用
+    links:
+    - title: 了解 Upgrade Health Checker
+      url: learn-about-upgrade-health-checker.html
+    - title: 設定 Upgrade Health Checker
+      url: set-up-upgrade-health-checker.html
+  - title: 使用 Upgrade Health Checker
+    links:
+    - title: 產生 ONTAP 升級報告
+      url: generate-report-upgrade-health-checker.html
+    - title: 自動產生報告
+      url: automate-report-upgrade-health-checker.html
+  - title: 更多資源
+    links:
+    - title: 了解 Upgrade Health Checker 的輸入參數
+      url: upgrade-health-checker-input-parameters.html
+    - title: 升級健全狀況檢查程式常見問題
+      url: faq.html
+    - title: Upgrade Advisor 說明文件
+      url: https://docs.netapp.com/us-en/active-iq/upgrade_advisor_overview.html

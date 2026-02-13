@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: generate-report-upgrade-health-checker.html 
+keywords: upgrade, health, checker, report 
+summary: 您可以使用 Upgrade Health Checker 為單一或多個 ONTAP 叢集產生升級計畫。 
+---
+= 使用 Upgrade Health Checker 產生升級計劃
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用 Upgrade Health Checker 為單一或多個 ONTAP 叢集產生升級計畫。
+
+如果您擁有一個包含多個叢集的大型複雜環境，您還可以 link:automate-report-upgrade-health-checker.html["自動產生升級報告"] 協助維護最新的升級計畫。
+
+.開始之前
+若要深入瞭解特定 Upgrade Health Checker 參數以及該工具接受輸入的優先順序，請參閱 link:upgrade-health-checker-input-parameters.html["了解 Upgrade Health Checker 的輸入參數"]。
+
+.步驟
+. 首次執行二進位檔案之前，請先設定執行權限：
++
+[source, cli]
+----
+chmod +x uhc
+----
++
+
+NOTE: Upgrade Health Checker 是一個獨立的軟體包，需要先解壓縮才能執行。這可能需要幾秒鐘。
+
+. 在完成 Upgrade Health Checker 的完整運作之前，請執行全面檢查，以確保工具可以連接到叢集和所需的端點：
++
+[source, cli]
+----
+--test all
+----
++
+全面檢查可確保託管 Upgrade Health Checker 的虛擬機器具備以下功能：
+
++
+** 透過 HTTPS 連線至 ONTAP 叢集 IP 位址
+** 透過 HTTPS 連接到遙測端點 (https://support.netapp.com/[]
+** 透過 HTTPS 連接到自動更新端點(https://api.uhc.netapp.com[]和 https://gql.aiq.netapp.com[]
+** 至少 4 GB 可用 `/tmp`空間
+
+
+. （可選）如果您想使用設定檔來儲存參數，請將 `config.yaml.example`檔案（位於您下載二進位檔案的相同位置）重新命名為 `config.yaml`。
++
+以下是一個 config.yaml 檔案範例：
+
++
+[listing]
+----
+# Application Configuration
+APP:
+  RUNS_PATH: "/opt/uhc/runs"
+
+# Cluster Credentials
+CLUSTER:
+  IP: "x.x.x.x"
+  USERNAME: "admin"
+  PASSWORD: "xyz"
+  TARGET_ONTAP_VERSION: ""  # Optional: Specify target ONTAP version (e.g., "9.16.1" or "current" to keep existing version). Leave empty to prompt user.
+  ACCEPT_EULA: false  # Optional: Set to true to accept EULA through config. If false/empty, user will be prompted interactively.
+----
+. 執行 Upgrade Health Checker，輸入要升級到的 ONTAP 版本並接受 EULA，並根據需要添加其他參數。
++
+
+NOTE: EULA 是一份多頁文件。輸入 `all`即可一次查看整份文件，然後輸入 `y`接受。
+
++
+下載叢集的 AutoSupport 日誌後，處理時間通常為一到兩分鐘，具體取決於叢集節點數量。由於不同 ONTAP 軟體版本處理 AutoSupport 收集的方式不同，每次 Upgrade Health Checker 執行都取決於叢集的目前負載和目前的 ONTAP 版本。
+
++
+.. 請參考 link:upgrade-health-checker-input-parameters.html["了解 Upgrade Health Checker 的輸入參數"]，熟悉可用的 Upgrade Health Checker 參數、輸入優先順序以及某些參數的預設值。
++
+Input Parameters Guide 還提供了有關指定自訂設定檔路徑和執行路徑的資訊，以簡化您的工作流程。最佳實務做法是為每個叢集建立一個自訂輸出目錄，以便有效地組織您的報告和日誌。
+
+.. 接受最終使用者授權合約並輸入目標 ONTAP 版本和任何其他參數，以執行升級健全狀況檢查程式。
++
+[source, cli]
+----
+./uhc
+----
+
+
+. 升級健康檢查器完成檢查後，導航至  `runs` 資料夾以查看升級計劃和叢集報告。
++
+
+NOTE: 程式的每次執行都是一次「獨立運行」，所有相關的資料、日誌和結果都將保存在相應的  `runs` 資料夾中。
+
+. 在網頁瀏覽器中開啟報告檔案（名為 `uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`）以檢視報告。如果您在遠端主機上執行，請先將報告檔案下載到可以在網頁瀏覽器上檢視報告的機器。
++
+日誌路徑和報告路徑如下：
+
++
+** 日誌路徑： `<output-path>/<unique-run-dir>/<cluster-name>/logs`
+** 報告路徑： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+
+
+
