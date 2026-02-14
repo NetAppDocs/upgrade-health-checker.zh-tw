@@ -23,5 +23,3 @@ indexpage:
       url: upgrade-health-checker-input-parameters.html
     - title: 升級健全狀況檢查程式常見問題
       url: faq.html
-    - title: Upgrade Advisor 說明文件
-      url: https://docs.netapp.com/us-en/active-iq/upgrade_advisor_overview.html

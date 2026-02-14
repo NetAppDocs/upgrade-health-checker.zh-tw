@@ -217,7 +217,6 @@
   <block id="a8324b80938b67ec782deb0221494038" category="doc">Upgrade Health Checker 新增功能</block>
   <block id="984ed907e956f5ada3f813bd4a802fd2" category="inline-link-macro">NetApp Console 自動化中心</block>
   <block id="28418efc88b69f5e65f0a85f816e9eea" category="paragraph">了解 Upgrade Health Checker 的新增功能。您可以透過導航至 <block ref="40053797cfb8864b5eaa5f1f6f7991c2" category="inline-link-macro-rx"></block> 中的 Upgrade Health Checker 磁貼並查看最新的 Upgrade Health Checker 下載檔案，找到更多增強功能資訊。</block>
-  <block id="70d92c1e2419b7500249e84f56bfda5d" category="section-title">2026 年 2 月 12 日</block>
   <block id="ae47874d4e80f14ff840114a5af1558e" category="paragraph">Upgrade Health Checker 提供了一種全新的解決方案，可產生全面的現場報告，幫助您成功完成 ONTAP 升級。它可以與現有的自動化和編排框架配合使用，從而在升級單一或多個叢集時提高效率。Upgrade Health Checker 支援升級到 ONTAP 9.11.1 及更高版本。</block>
   <block id="ba6d627457ce6f12fac3776c3f84b9f5" category="inline-link-macro">深入瞭解 Upgrade Health Checker</block>
   <block id="c2da3472d13132f746797e82ab607214" category="paragraph"><block ref="311172ef496e6974c00a808505e30585" category="inline-link-macro-rx"></block>。</block>
@@ -228,9 +227,9 @@
   <block id="e28bd5f4fde7913aca83e892e7ffda0a" category="sidebar">使用 Upgrade Health Checker</block>
   <block id="514c14b02caf403ad003cd6f6072c8d1" category="sidebar">自動產生報告</block>
   <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">更多資源</block>
-  <block id="a3c4408acdfc01e2ed1bf7df24ffcfbd" category="sidebar">Upgrade Advisor 說明文件</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">版本資訊</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
   <block id="6ba8c57dc65e01916d692a44ff09f37a" category="sidebar">升級健全狀況檢查程式的輸入參數</block>
   <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">常見問題</block>
+  <block id="d8f8bff1a4b83b3c4aa6b4284a2e39c2" category="section-title">2026 年 2 月 13 日</block>
 </blocks>
