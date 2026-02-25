@@ -4,7 +4,6 @@
   <block id="851802a6ceccf3253b5814d265b9d85f" category="doc">使用 Upgrade Health Checker 自動產生升級計劃</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">步驟</block>
   <block id="bb4632cd1e5a77d2d2a6ad9870b1edf3" category="inline-link-macro">產生 ONTAP 升級報告</block>
-  <block id="cbf0409b66c9c191f2bbf7aebb95c7c6" category="list-text">為確保成功建立升級報告，請完成 <block ref="447f94c751f3bc061f73c40c9324c9a3" category="inline-link-macro-rx"></block> 中概述的任何必要設定步驟和一次性任務。</block>
   <block id="7c3f7cf7c460927ff3a0856e45060529" category="list-text">建立一個腳本，使用適合您環境的參數執行 Upgrade Health Checker。</block>
   <block id="4a2fc7904851b98a582cefc5576f3c0b" category="paragraph">以下是一個 cronjob 的範例，該 cronjob 會在週一至週五凌晨 4 點執行該工具。二進位檔案和 config.yaml 檔案已安裝到 /opt/uhc/tool/ 中。</block>
   <block id="af6a390b44e1466e540d2c134316ae89" category="paragraph">Bash 腳本：</block>
@@ -26,7 +25,6 @@
   <block id="92134baadd628aac9e12056c62e0dc5e" category="paragraph">Upgrade Health Checker 報告提供有關升級 ONTAP 叢集之前需要解決的潛在障礙和警告的詳細資訊、與叢集相關的風險，以及有關您要升級到的 ONTAP 版本中的新功能和增強功能的資訊。</block>
   <block id="a17989ff5f0962c2877477c74338ae61" category="section-title">Upgrade Health Checker 可以在沒有網際網路連線的情況下使用嗎？</block>
   <block id="3880fea319e437eea669686be6861626" category="paragraph">您不需要網際網路連線即可執行 Upgrade Health Checker。它會使用您的 ONTAP 叢集目前的組態資料在現場產生升級計劃和報告。</block>
-  <block id="a6d52acf3204cc6a87bd7aaed6f3eef7" category="paragraph">但是，自動工具更新需要網際網路存取。如果您的環境缺乏網際網路連線，請聯絡 NetApp 以取得如何確保您的 Upgrade Health Checker 工具保持最新狀態的指導。</block>
   <block id="982d129000c1d3e533f5e8593c670b3d" category="section-title">Upgrade Health Checker 支援哪些 ONTAP 版本？</block>
   <block id="4c8d49c7d71cf0e79e3740d7cf67dd62" category="paragraph">升級健全狀況檢查程式支援升級至 ONTAP 9.11.1 及更新版本。</block>
   <block id="b7c89596c79e950e74638e5d75919aee" category="summary">您可以使用 Upgrade Health Checker 為單一或多個 ONTAP 叢集產生升級計畫。</block>
@@ -232,4 +230,6 @@
   <block id="6ba8c57dc65e01916d692a44ff09f37a" category="sidebar">升級健全狀況檢查程式的輸入參數</block>
   <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">常見問題</block>
   <block id="d8f8bff1a4b83b3c4aa6b4284a2e39c2" category="section-title">2026 年 2 月 13 日</block>
+  <block id="f245d5b92eabff0d1c1d1e41530987d0" category="list-text">為確保成功建立升級報告，請完成 <block ref="6489edbb98d22789fa797cea6950f9bd" category="inline-link-macro-rx"></block> 中概述的任何必要設定步驟和一次性任務。</block>
+  <block id="4a5a50ece5ac2f055b9ecb1ac0f449f2" category="paragraph">但是，自動工具更新需要網際網路存取。如果您的環境缺乏網際網路連線，您可以從 <block ref="886a64ecc1d4032be9eb5d1da893e684" category="inline-link-macro-rx"></block> 上的 Upgrade Health Checker 磚手動下載工具的最新版本。</block>
 </blocks>

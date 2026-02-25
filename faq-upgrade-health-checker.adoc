@@ -35,7 +35,7 @@ Upgrade Health Checker 報告提供有關升級 ONTAP 叢集之前需要解決�
 
 您不需要網際網路連線即可執行 Upgrade Health Checker。它會使用您的 ONTAP 叢集目前的組態資料在現場產生升級計劃和報告。
 
-但是，自動工具更新需要網際網路存取。如果您的環境缺乏網際網路連線，請聯絡 NetApp 以取得如何確保您的 Upgrade Health Checker 工具保持最新狀態的指導。
+但是，自動工具更新需要網際網路存取。如果您的環境缺乏網際網路連線，您可以從 link:https://console.netapp.com/automationHub["NetApp Console 自動化中心"] 上的 Upgrade Health Checker 磚手動下載工具的最新版本。
 
 
 
