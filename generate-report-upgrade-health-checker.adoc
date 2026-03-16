@@ -17,6 +17,9 @@ summary: 您可以使用 Upgrade Health Checker 為單一或多個 ONTAP 叢集�
 
 如果您擁有一個包含多個叢集的大型複雜環境，您還可以 link:automate-report-upgrade-health-checker.html["自動產生升級報告"] 協助維護最新的升級計畫。
 
+.關於此任務
+Upgrade Health Checker 支援內部部署 ONTAP 9.11.1 及更新版本的升級。如果您使用 Cloud Volumes ONTAP，請參閱 link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-updating-ontap-cloud.html#supported-upgrade-paths["升級 Cloud Volumes ONTAP"] 以取得系統升級資訊。
+
 .開始之前
 若要深入瞭解特定 Upgrade Health Checker 參數以及該工具接受輸入的優先順序，請參閱 link:upgrade-health-checker-input-parameters.html["了解 Upgrade Health Checker 的輸入參數"]。
 

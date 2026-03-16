@@ -15,6 +15,9 @@ summary: 在大型、複雜的環境中規劃 ONTAP 升級時，您可以自動�
 [role="lead"]
 在大型、複雜的環境中規劃 ONTAP 升級時，您可以自動產生升級健全狀況檢查程式報告，以減少手動工作量。
 
+.關於此任務
+Upgrade Health Checker 支援內部部署 ONTAP 9.11.1 及更新版本的升級。如果您使用 Cloud Volumes ONTAP，請參閱 link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-updating-ontap-cloud.html#supported-upgrade-paths["升級 Cloud Volumes ONTAP"] 以取得系統升級資訊。
+
 .步驟
 . 為確保成功建立升級報告，請完成 link:generate-report-upgrade-health-checker.html["產生 ONTAP 升級報告"] 中概述的任何必要設定步驟和一次性任務。
 . 建立一個腳本，使用適合您環境的參數執行 Upgrade Health Checker。

@@ -15,11 +15,20 @@ summary: 您可以下載 Upgrade Health Checker，在升級到更新版本的 ON
 [role="lead"]
 您可以下載 Upgrade Health Checker，在升級到更新版本的 ONTAP 之前產生現場綜合報告。
 
+.關於此任務
+Upgrade Health Checker 支援內部部署 ONTAP 9.11.1 及更新版本的升級。如果您使用 Cloud Volumes ONTAP，請參閱 link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-updating-ontap-cloud.html#supported-upgrade-paths["升級 Cloud Volumes ONTAP"] 以取得系統升級資訊。
+
 .開始之前
 使用以下規格為 Upgrade Health Checker 設定虛擬機器：
 
 * 處理與記憶體：m5.large VM 或同等配置，配備 2 個 vCPU 和 8 GiB RAM。
-* 建議作業系統：Ubuntu 22.04 以獲得最佳相容性。
+* 建議的作業系統：任何具有 glibc 函式庫版本 2.28 或更高版本的 Linux 作業系統，以獲得最佳相容性。這包括：
++
+** Ubuntu 22.04
+** RHEL8
+** RHEL9
+
+
 * 儲存：提供一個至少 100 GB 的根磁碟區和一個至少 100 GB 的額外 NFS 磁碟區，以確保在虛擬機器遭到入侵時資料能夠保留。
 * 託管需求：將 VM 放置在具有叢集連線和網際網路存取權限的位置，以便實現工具的自動更新。該機器應可透過 HTTPS 存取以下端點以執行自動更新：
 +
@@ -92,7 +101,7 @@ security login create -user-or-group-name uhctool -role uhctool -application htt
 
 security login create -user-or-group-name uhctool -role uhctool -application ssh -authentication-method password
 ----
-. 設定憑證管理以確保對應用程式的存取安全。
+. （選用）設定認證管理以保護對應用程式的存取。
 +
 例如，如果您有 CyberArk 和 Conjur，您可以設定您的環境，以避免透過 yaml 檔案或命令列傳遞認證資料。
 

@@ -41,4 +41,4 @@ Upgrade Health Checker 報告提供有關升級 ONTAP 叢集之前需要解決�
 
 == Upgrade Health Checker 支援哪些 ONTAP 版本？
 
-升級健全狀況檢查程式支援升級至 ONTAP 9.11.1 及更新版本。
+升級健全狀況檢查程式支援內部部署 ONTAP 9.11.1 及更新版本的升級。
