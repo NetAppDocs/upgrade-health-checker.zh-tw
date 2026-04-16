@@ -58,13 +58,15 @@ Cron 工作：
 
 NOTE: 每次執行程式都是獨立的運行，所有相關的資料、日誌和結果都將保存在相應的  `runs` 資料夾中。
 
-. 在網頁瀏覽器中開啟報告檔案（名稱為 `uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`）以檢視報告。如果您在遠端主機上執行 Upgrade Health Checker，請先將報告檔案下載到可以使用網頁瀏覽器檢視的電腦。
+. 在網頁瀏覽器、Microsoft Excel 或 JSON 檢視器中開啟報表檔案（名為 `uhc_<cluster-name>_<YYYYMMDDHHMMSS>`）以檢視報表。如果您在遠端主機上執行 Upgrade Health Checker，請先將報表檔案下載到可以在網頁瀏覽器、Excel 或 JSON 檢視器中檢視報表的機器。
 +
 日誌路徑和報告路徑如下：
 
 +
 ** 日誌路徑： `<output-path>/<unique-run-dir>/<cluster-name>/logs`
-** 報告路徑： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+** HTML 報告路徑： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+** Excel 報表路徑： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.xlsx`
+** JSON 報表路徑： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.json`
 
 
 

@@ -30,10 +30,11 @@ Upgrade Health Checker 支援內部部署 ONTAP 9.11.1 及更新版本的升級�
 
 
 * 儲存：提供一個至少 100 GB 的根磁碟區和一個至少 100 GB 的額外 NFS 磁碟區，以確保在虛擬機器遭到入侵時資料能夠保留。
-* 託管需求：將 VM 放置在具有叢集連線和網際網路存取權限的位置，以便實現工具的自動更新。該機器應可透過 HTTPS 存取以下端點以執行自動更新：
+* 託管需求：將 VM 放置在具有叢集連線和網際網路存取的位置，以便實現工具的自動更新。此機器應可透過 HTTPS （443） 存取以下端點以執行自動更新：
 +
 ** https://api.uhc.netapp.com[]
 ** https://gql.aiq.netapp.com[]
+** https://api.activeiq.netapp.com[]
 +
 如果無法存取網際網路，請諮詢 NetApp 以取得指引。
 
@@ -42,7 +43,7 @@ Upgrade Health Checker 支援內部部署 ONTAP 9.11.1 及更新版本的升級�
 * 建議套件：安裝 Web 伺服器以方便存取。
 
 
-此外，請確保虛擬機器可以透過 HTTPS 連接到遙測端點(https://support.netapp.com/[]，以便 NetApp 接收有關升級計劃的 AutoSupport 資訊。
+此外，請確保虛擬機器可以透過 HTTPS 連接到遙測端點(https://support.netapp.com/[]和 https://api.activeiq.netapp.com[]，以便 NetApp 接收有關升級計劃的 AutoSupport 資訊。
 
 .步驟
 . 下載 Upgrade Health Checker 二進位檔案，方法是 link:https://console.netapp.com/automationHub["導覽至 NetApp Console Automation Hub"] 並找到 Upgrade Health Checker 圖示。

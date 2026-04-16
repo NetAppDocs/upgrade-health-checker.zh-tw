@@ -45,8 +45,8 @@ NOTE: Upgrade Health Checker 是一個獨立的軟體包，需要先解壓縮才
 
 +
 ** 透過 HTTPS 連線至 ONTAP 叢集 IP 位址
-** 透過 HTTPS 連接到遙測端點 (https://support.netapp.com/[]
-** 透過 HTTPS 連接到自動更新端點(https://api.uhc.netapp.com[]和 https://gql.aiq.netapp.com[]
+** 透過 HTTPS 連接到遙測端點(https://support.netapp.com/[] 和 https://api.activeiq.netapp.com[]
+** 透過 HTTPS (443) 連線到自動更新端點（(https://api.uhc.netapp.com[]、 https://gql.aiq.netapp.com[] 和  https://api.activeiq.netapp.com[]）
 ** 至少 4 GB 可用 `/tmp`空間
 
 
@@ -95,13 +95,15 @@ Input Parameters Guide 還提供了有關指定自訂設定檔路徑和執行路
 
 NOTE: 程式的每次執行都是一次「獨立運行」，所有相關的資料、日誌和結果都將保存在相應的  `runs` 資料夾中。
 
-. 在網頁瀏覽器中開啟報告檔案（名為 `uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`）以檢視報告。如果您在遠端主機上執行，請先將報告檔案下載到可以在網頁瀏覽器上檢視報告的機器。
+. 在網頁瀏覽器、Microsoft Excel 或 JSON 檢視器中開啟報表檔案（名稱為 `uhc_<cluster-name>_<YYYYMMDDHHMMSS>`）以檢視報表。如果您在遠端主機上執行，請先將報表檔案下載到可以在網頁瀏覽器、Excel 或 JSON 檢視器中檢視報表的機器上。
 +
 日誌路徑和報告路徑如下：
 
 +
 ** 日誌路徑： `<output-path>/<unique-run-dir>/<cluster-name>/logs`
-** 報告路徑： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+** HTML 報告路徑： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.html`
+** Excel 報表路徑： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.xlsx`
+** JSON 報表路徑： `<output-path>/<unique-run-dir>/<cluster-name>/results/uhc_<cluster-name>_<YYYYMMDDHHMMSS>.json`
 
 
 

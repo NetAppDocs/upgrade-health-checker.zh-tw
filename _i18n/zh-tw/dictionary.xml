@@ -10,10 +10,8 @@
   <block id="a16591c11e618548314d95d8cb9f466c" category="paragraph">Cron 工作：</block>
   <block id="4a419eed497d5a9cc6325bd677912447" category="list-text">升級健康檢查器完成檢查後，導航至 <block ref="878983117a2370e5b702db49786da067" prefix=" " category="inline-code"></block> 資料夾以查看升級計劃和叢集報告。</block>
   <block id="e634565f95b1012e8b64a5e25f71b4d2" category="admonition">每次執行程式都是獨立的運行，所有相關的資料、日誌和結果都將保存在相應的 <block ref="878983117a2370e5b702db49786da067" prefix=" " category="inline-code"></block> 資料夾中。</block>
-  <block id="f02cb42b34717f58312e87a6c6a3f0b7" category="list-text">在網頁瀏覽器中開啟報告檔案（名稱為<block ref="bc3548bedd723b0ffedd796c759eafb1" prefix=" " category="inline-code"></block>）以檢視報告。如果您在遠端主機上執行 Upgrade Health Checker，請先將報告檔案下載到可以使用網頁瀏覽器檢視的電腦。</block>
   <block id="4e37054133b8a9e3c2adbe0fdc102c34" category="paragraph">日誌路徑和報告路徑如下：</block>
   <block id="d4f180313d0c382395fb5552082544bf" category="list-text">日誌路徑：<block ref="056716fdc8e198679abe9b3946c631cf" prefix=" " category="inline-code"></block></block>
-  <block id="63c8b5222d1ee8d79de6660da3eaef50" category="list-text">報告路徑：<block ref="42dfa52dc698f1548746e65dadae2dba" prefix=" " category="inline-code"></block></block>
   <block id="848fb46d80fa326851b061b6dfad66be" category="summary">Upgrade Health Checker 常見問題（FAQ）。</block>
   <block id="2a4d8488d929be6bef9bc441b32078c7" category="doc">升級健全狀況檢查程式常見問題</block>
   <block id="9f4e75bee30b521f1814643b0bd0dc50" category="section-title">Upgrade Health Checker 與 Upgrade Advisor 有何不同？</block>
@@ -39,8 +37,6 @@
   <block id="a6af1159f5885cc5683819f03f5eba4c" category="paragraph">全面檢查可確保託管 Upgrade Health Checker 的虛擬機器具備以下功能：</block>
   <block id="d333aef011149b38d807ae69b77df0db" category="list-text">透過 HTTPS 連線至 ONTAP 叢集 IP 位址</block>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-link"></block>
-  <block id="1bda50643710bdee88e5f7b89ecfce86" category="list-text">透過 HTTPS 連接到遙測端點 <block ref="dff1129755a63688cdc5de28dfe608ad" category="inline-link-rx"></block></block>
-  <block id="684e35b64e667ed5386392f6bc72425b" category="list-text">透過 HTTPS 連接到自動更新端點<block ref="7b0c3a92f481d16df4dd5efff5f61700" category="inline-link-rx"></block>和<block ref="75a282c90668bc1468d683bacd2cabd2" category="inline-link-rx"></block></block>
   <block id="7694967e044dd1d2923b0cea4e472179" category="list-text">至少 4 GB 可用<block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block>空間</block>
   <block id="727e26a3103d69ba9d982a7013910355" category="list-text">（可選）如果您想使用設定檔來儲存參數，請將<block ref="1010e3344617b31dd1b22e5cb7bd6833" prefix=" " category="inline-code"></block>檔案（位於您下載二進位檔案的相同位置）重新命名為<block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block>。</block>
   <block id="ea20ff07be154a6d361686df025bbc38" category="paragraph">以下是一個 config.yaml 檔案範例：</block>
@@ -51,7 +47,6 @@
   <block id="06bf55f53800587243aa18867ccc9b0c" category="paragraph">Input Parameters Guide 還提供了有關指定自訂設定檔路徑和執行路徑的資訊，以簡化您的工作流程。最佳實務做法是為每個叢集建立一個自訂輸出目錄，以便有效地組織您的報告和日誌。</block>
   <block id="bef31ea9ddf34bff75792f2fff0d5cbc" category="list-text">接受最終使用者授權合約並輸入目標 ONTAP 版本和任何其他參數，以執行升級健全狀況檢查程式。</block>
   <block id="d35e5d5961dfaa8f5243866aeef147f3" category="admonition">程式的每次執行都是一次「獨立運行」，所有相關的資料、日誌和結果都將保存在相應的 <block ref="878983117a2370e5b702db49786da067" prefix=" " category="inline-code"></block> 資料夾中。</block>
-  <block id="08e04af94bbf61d680a4a44d4edb4111" category="list-text">在網頁瀏覽器中開啟報告檔案（名為<block ref="bc3548bedd723b0ffedd796c759eafb1" prefix=" " category="inline-code"></block>）以檢視報告。如果您在遠端主機上執行，請先將報告檔案下載到可以在網頁瀏覽器上檢視報告的機器。</block>
   <block id="4b88cca218b188588aa2a452e46894da" category="summary">Upgrade Health Checker 是一款升級諮詢服務工具，可提供詳細資訊和建議，協助您成功完成 ONTAP 升級。</block>
   <block id="e75e96e756ff4d38a10cdee84526ca22" category="doc">了解 Upgrade Health Checker</block>
   <block id="88e9e7bdabbf15e882c2c1d5c1356ba0" category="paragraph">Upgrade Health Checker 是一款升級諮詢服務工具，可提供詳細資訊和建議，協助您成功完成 ONTAP 升級。它會進行全面的現場健康檢查，識別您在執行升級之前必須解決的障礙和警告。</block>
@@ -79,12 +74,10 @@
   <block id="55dcd8cbc9d164986479594db66fd89e" category="paragraph">使用以下規格為 Upgrade Health Checker 設定虛擬機器：</block>
   <block id="cf0860ffd4dc1929d768f74d92735b75" category="list-text">處理與記憶體：m5.large VM 或同等配置，配備 2 個 vCPU 和 8 GiB RAM。</block>
   <block id="28a03eb4af7c5f6abf99620ada6c6cfb" category="list-text">儲存：提供一個至少 100 GB 的根磁碟區和一個至少 100 GB 的額外 NFS 磁碟區，以確保在虛擬機器遭到入侵時資料能夠保留。</block>
-  <block id="492b15c109a51daa9f89630b4f2bb303" category="list-text">託管需求：將 VM 放置在具有叢集連線和網際網路存取權限的位置，以便實現工具的自動更新。該機器應可透過 HTTPS 存取以下端點以執行自動更新：</block>
   <block id="072b499eacb5befcbdab2d6cc0fe02a0" category="list-text"><block ref="072b499eacb5befcbdab2d6cc0fe02a0" category="inline-link-rx"></block></block>
   <block id="53fb0fc7c544c164b74ed43fbccd4384" category="list-text"><block ref="53fb0fc7c544c164b74ed43fbccd4384" category="inline-link-rx"></block></block>
   <block id="907609b93268ffb2d43f03dae5c950a3" category="paragraph">如果無法存取網際網路，請諮詢 NetApp 以取得指引。</block>
   <block id="ad9d14ce6f324c6a7d87f50e2b156ad7" category="list-text">建議套件：安裝 Web 伺服器以方便存取。</block>
-  <block id="222fc917ceda606917084c949d4918ba" category="paragraph">此外，請確保虛擬機器可以透過 HTTPS 連接到遙測端點<block ref="dff1129755a63688cdc5de28dfe608ad" category="inline-link-rx"></block>，以便 NetApp 接收有關升級計劃的 AutoSupport 資訊。</block>
   <block id="513157ecd257a5ac15a2bf664400f97e" category="inline-link-macro">導覽至 NetApp Console Automation Hub</block>
   <block id="f7516c48eeea343f7fff7d7edbe475e0" category="list-text">下載 Upgrade Health Checker 二進位檔案，方法是 <block ref="d29e77f401a63487e90236d789082319" category="inline-link-macro-rx"></block> 並找到 Upgrade Health Checker 圖示。</block>
   <block id="516fc188e817bb3cd710620ace1129a5" category="list-text">設定 Upgrade Health Checker 虛擬機器，並使用 SSH 將二進位檔案放置在您選擇的位置。</block>
@@ -238,4 +231,21 @@
   <block id="131e01e2ecbd7de2f9b3f16afa129bcd" category="list-text">RHEL8</block>
   <block id="100147deec73dd6ee82e8d75ab8b4981" category="list-text">RHEL9</block>
   <block id="3d814f055016b0a5f8d3fd580ea0225d" category="list-text">（選用）設定認證管理以保護對應用程式的存取。</block>
+  <block id="bd4dd8e5ccbd7fbe54cf123a8e868745" category="list-text">在網頁瀏覽器、Microsoft Excel 或 JSON 檢視器中開啟報表檔案（名為<block ref="781e82a34e84af3b11fccec6b813c654" prefix=" " category="inline-code"></block>）以檢視報表。如果您在遠端主機上執行 Upgrade Health Checker，請先將報表檔案下載到可以在網頁瀏覽器、Excel 或 JSON 檢視器中檢視報表的機器。</block>
+  <block id="e1b8614301d7bec3825b94f88f799128" category="list-text">HTML 報告路徑：<block ref="42dfa52dc698f1548746e65dadae2dba" prefix=" " category="inline-code"></block></block>
+  <block id="38fda984a0c5a847814d8f79ebf27b47" category="list-text">Excel 報表路徑：<block ref="b579a006aab9674bb4b5ee8bdc1dc5a8" prefix=" " category="inline-code"></block></block>
+  <block id="82e19305023b5eb3613e715db77f833c" category="list-text">JSON 報表路徑：<block ref="fa32c5a3f7d651976fb4d5ab4d04b0b0" prefix=" " category="inline-code"></block></block>
+  <block id="6dd1c9daa4dc12fc30a473b455c79963" category="list-text">透過 HTTPS 連接到遙測端點<block ref="dff1129755a63688cdc5de28dfe608ad" category="inline-link-rx"></block> 和<block ref="b6e65db6bdd125b2fca849ddf715a294" category="inline-link-rx"></block></block>
+  <block id="2337a5c21840ff98faafc2454e42e258" category="list-text">透過 HTTPS (443) 連線到自動更新端點（<block ref="7b0c3a92f481d16df4dd5efff5f61700" category="inline-link-rx"></block>、<block ref="75a282c90668bc1468d683bacd2cabd2" category="inline-link-rx"></block> 和 <block ref="b6e65db6bdd125b2fca849ddf715a294" category="inline-link-rx"></block>）</block>
+  <block id="c9222608750e8dc2e14567da95cc5574" category="list-text">在網頁瀏覽器、Microsoft Excel 或 JSON 檢視器中開啟報表檔案（名稱為<block ref="781e82a34e84af3b11fccec6b813c654" prefix=" " category="inline-code"></block>）以檢視報表。如果您在遠端主機上執行，請先將報表檔案下載到可以在網頁瀏覽器、Excel 或 JSON 檢視器中檢視報表的機器上。</block>
+  <block id="23f77c02d4b9cce31928ac38c3a2b6f9" category="list-text">託管需求：將 VM 放置在具有叢集連線和網際網路存取的位置，以便實現工具的自動更新。此機器應可透過 HTTPS （443） 存取以下端點以執行自動更新：</block>
+  <block id="1e149c7d9ce6dc9e42acefe98045ece8" category="list-text"><block ref="1e149c7d9ce6dc9e42acefe98045ece8" category="inline-link-rx"></block></block>
+  <block id="d100bb5092fa91acd1332279f9e39144" category="paragraph">此外，請確保虛擬機器可以透過 HTTPS 連接到遙測端點<block ref="dff1129755a63688cdc5de28dfe608ad" category="inline-link-rx"></block>和<block ref="b6e65db6bdd125b2fca849ddf715a294" category="inline-link-rx"></block>，以便 NetApp 接收有關升級計劃的 AutoSupport 資訊。</block>
+  <block id="ef442759af12bb34136648bc4519a80c" category="section-title">2026 年 4 月 15 日</block>
+  <block id="46f2cb9a84a7af28bc6cd48700cc9900" category="paragraph">本次 Upgrade Health Checker 文件更新包含以下功能。</block>
+  <block id="ad88b0b80ee104829693617a9bf958bd" category="list-text">UHC 需要存取新的端點 <block ref="7284fbd648a23f7bd89ffe1d29d304e6" category="inline-link-rx"></block> 才能使自動更新功能正常運作。</block>
+  <block id="e1a2132b8b37788de7f02a2417b9fb84" category="paragraph"><block ref="818545cfdb8752d4fd7459b5cbb30ef7" category="inline-link-macro-rx"></block>。</block>
+  <block id="b729a38666412b046926504f8c6e0c22" category="list-text">UHC 現在提供了一種新的報告格式（.XLSX - 人類可編輯），作為 HTML（人類可讀）和 JSON（機器可讀）格式的補充。</block>
+  <block id="28644c8986780297cc12f67e6e53c6e9" category="paragraph"><block ref="6489edbb98d22789fa797cea6950f9bd" category="inline-link-macro-rx"></block>。</block>
+  <block id="188972059fe3b72a4a06d5b2f9a9f5e8" category="paragraph"><block ref="2351634b2585980a03146a4b76c86b91" category="inline-link-macro-rx"></block>。</block>
 </blocks>
