@@ -248,4 +248,5 @@
   <block id="b729a38666412b046926504f8c6e0c22" category="list-text">UHC 現在提供了一種新的報告格式（.XLSX - 人類可編輯），作為 HTML（人類可讀）和 JSON（機器可讀）格式的補充。</block>
   <block id="28644c8986780297cc12f67e6e53c6e9" category="paragraph"><block ref="6489edbb98d22789fa797cea6950f9bd" category="inline-link-macro-rx"></block>。</block>
   <block id="188972059fe3b72a4a06d5b2f9a9f5e8" category="paragraph"><block ref="2351634b2585980a03146a4b76c86b91" category="inline-link-macro-rx"></block>。</block>
+  <block id="14bcc4201c40840cb4def541b49a3f32" category="sidebar">使用 NetApp Lab on Demand 開始使用 Upgrade Health Checker</block>
 </blocks>
