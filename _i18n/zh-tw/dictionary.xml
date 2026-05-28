@@ -74,8 +74,6 @@
   <block id="55dcd8cbc9d164986479594db66fd89e" category="paragraph">使用以下規格為 Upgrade Health Checker 設定虛擬機器：</block>
   <block id="cf0860ffd4dc1929d768f74d92735b75" category="list-text">處理與記憶體：m5.large VM 或同等配置，配備 2 個 vCPU 和 8 GiB RAM。</block>
   <block id="28a03eb4af7c5f6abf99620ada6c6cfb" category="list-text">儲存：提供一個至少 100 GB 的根磁碟區和一個至少 100 GB 的額外 NFS 磁碟區，以確保在虛擬機器遭到入侵時資料能夠保留。</block>
-  <block id="072b499eacb5befcbdab2d6cc0fe02a0" category="list-text"><block ref="072b499eacb5befcbdab2d6cc0fe02a0" category="inline-link-rx"></block></block>
-  <block id="53fb0fc7c544c164b74ed43fbccd4384" category="list-text"><block ref="53fb0fc7c544c164b74ed43fbccd4384" category="inline-link-rx"></block></block>
   <block id="907609b93268ffb2d43f03dae5c950a3" category="paragraph">如果無法存取網際網路，請諮詢 NetApp 以取得指引。</block>
   <block id="ad9d14ce6f324c6a7d87f50e2b156ad7" category="list-text">建議套件：安裝 Web 伺服器以方便存取。</block>
   <block id="513157ecd257a5ac15a2bf664400f97e" category="inline-link-macro">導覽至 NetApp Console Automation Hub</block>
@@ -235,18 +233,20 @@
   <block id="e1b8614301d7bec3825b94f88f799128" category="list-text">HTML 報告路徑：<block ref="42dfa52dc698f1548746e65dadae2dba" prefix=" " category="inline-code"></block></block>
   <block id="38fda984a0c5a847814d8f79ebf27b47" category="list-text">Excel 報表路徑：<block ref="b579a006aab9674bb4b5ee8bdc1dc5a8" prefix=" " category="inline-code"></block></block>
   <block id="82e19305023b5eb3613e715db77f833c" category="list-text">JSON 報表路徑：<block ref="fa32c5a3f7d651976fb4d5ab4d04b0b0" prefix=" " category="inline-code"></block></block>
-  <block id="6dd1c9daa4dc12fc30a473b455c79963" category="list-text">透過 HTTPS 連接到遙測端點<block ref="dff1129755a63688cdc5de28dfe608ad" category="inline-link-rx"></block> 和<block ref="b6e65db6bdd125b2fca849ddf715a294" category="inline-link-rx"></block></block>
-  <block id="2337a5c21840ff98faafc2454e42e258" category="list-text">透過 HTTPS (443) 連線到自動更新端點（<block ref="7b0c3a92f481d16df4dd5efff5f61700" category="inline-link-rx"></block>、<block ref="75a282c90668bc1468d683bacd2cabd2" category="inline-link-rx"></block> 和 <block ref="b6e65db6bdd125b2fca849ddf715a294" category="inline-link-rx"></block>）</block>
   <block id="c9222608750e8dc2e14567da95cc5574" category="list-text">在網頁瀏覽器、Microsoft Excel 或 JSON 檢視器中開啟報表檔案（名稱為<block ref="781e82a34e84af3b11fccec6b813c654" prefix=" " category="inline-code"></block>）以檢視報表。如果您在遠端主機上執行，請先將報表檔案下載到可以在網頁瀏覽器、Excel 或 JSON 檢視器中檢視報表的機器上。</block>
   <block id="23f77c02d4b9cce31928ac38c3a2b6f9" category="list-text">託管需求：將 VM 放置在具有叢集連線和網際網路存取的位置，以便實現工具的自動更新。此機器應可透過 HTTPS （443） 存取以下端點以執行自動更新：</block>
-  <block id="1e149c7d9ce6dc9e42acefe98045ece8" category="list-text"><block ref="1e149c7d9ce6dc9e42acefe98045ece8" category="inline-link-rx"></block></block>
-  <block id="d100bb5092fa91acd1332279f9e39144" category="paragraph">此外，請確保虛擬機器可以透過 HTTPS 連接到遙測端點<block ref="dff1129755a63688cdc5de28dfe608ad" category="inline-link-rx"></block>和<block ref="b6e65db6bdd125b2fca849ddf715a294" category="inline-link-rx"></block>，以便 NetApp 接收有關升級計劃的 AutoSupport 資訊。</block>
   <block id="ef442759af12bb34136648bc4519a80c" category="section-title">2026 年 4 月 15 日</block>
   <block id="46f2cb9a84a7af28bc6cd48700cc9900" category="paragraph">本次 Upgrade Health Checker 文件更新包含以下功能。</block>
-  <block id="ad88b0b80ee104829693617a9bf958bd" category="list-text">UHC 需要存取新的端點 <block ref="7284fbd648a23f7bd89ffe1d29d304e6" category="inline-link-rx"></block> 才能使自動更新功能正常運作。</block>
   <block id="e1a2132b8b37788de7f02a2417b9fb84" category="paragraph"><block ref="818545cfdb8752d4fd7459b5cbb30ef7" category="inline-link-macro-rx"></block>。</block>
   <block id="b729a38666412b046926504f8c6e0c22" category="list-text">UHC 現在提供了一種新的報告格式（.XLSX - 人類可編輯），作為 HTML（人類可讀）和 JSON（機器可讀）格式的補充。</block>
   <block id="28644c8986780297cc12f67e6e53c6e9" category="paragraph"><block ref="6489edbb98d22789fa797cea6950f9bd" category="inline-link-macro-rx"></block>。</block>
   <block id="188972059fe3b72a4a06d5b2f9a9f5e8" category="paragraph"><block ref="2351634b2585980a03146a4b76c86b91" category="inline-link-macro-rx"></block>。</block>
   <block id="14bcc4201c40840cb4def541b49a3f32" category="sidebar">使用 NetApp Lab on Demand 開始使用 Upgrade Health Checker</block>
+  <block id="9878135fc061d82ca23d024a73b70f17" category="list-text">透過 HTTPS 連接到遙測端點（+https://support.netapp.com/+ 和 +https://api.activeiq.netapp.com+）</block>
+  <block id="8e902ec9dc6816d99e16bdee4a2eed46" category="list-text">透過 HTTPS（443）連線到自動更新端點（+https://api.uhc.netapp.com+、+https://gql.aiq.netapp.com+ 和 +https://api.activeiq.netapp.com+）</block>
+  <block id="6004dfc86627bd24fdacdda35ddd16c3" category="list-text">+https://api.uhc.netapp.com+</block>
+  <block id="375ac624794a2a89bd6c16e9b07a6656" category="list-text">+https://gql.aiq.netapp.com+</block>
+  <block id="0cf9833b48d6a8ca87c343c5a45e4e84" category="list-text">+https://api.activeiq.netapp.com+</block>
+  <block id="527e62c9953c2bebba6b642861ac2fd8" category="paragraph">此外，請確保虛擬機器可以透過 HTTPS 連接到遙測端點（+https://support.netapp.com+/ 和 +https://api.activeiq.netapp.com+），以便 NetApp 接收有關升級計劃的 AutoSupport 資訊。</block>
+  <block id="7da7d55bf35c61004edeb6d3b68a9970" category="list-text">UHC 需要存取新的端點 (+https://api.activeiq.netapp.com+) 才能使自動更新功能正常運作。</block>
 </blocks>

@@ -21,7 +21,7 @@ summary: 了解此文件網站的最新內容。
 
 本次 Upgrade Health Checker 文件更新包含以下功能。
 
-* UHC 需要存取新的端點 (https://api.activeiq.netapp.com[] 才能使自動更新功能正常運作。
+* UHC 需要存取新的端點 (+https://api.activeiq.netapp.com+) 才能使自動更新功能正常運作。
 +
 link:set-up-upgrade-health-checker.html["下載並設定 Upgrade Health Checker"]。
 

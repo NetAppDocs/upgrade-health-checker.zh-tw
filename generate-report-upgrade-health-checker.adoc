@@ -45,8 +45,8 @@ NOTE: Upgrade Health Checker 是一個獨立的軟體包，需要先解壓縮才
 
 +
 ** 透過 HTTPS 連線至 ONTAP 叢集 IP 位址
-** 透過 HTTPS 連接到遙測端點(https://support.netapp.com/[] 和 https://api.activeiq.netapp.com[]
-** 透過 HTTPS (443) 連線到自動更新端點（(https://api.uhc.netapp.com[]、 https://gql.aiq.netapp.com[] 和  https://api.activeiq.netapp.com[]）
+** 透過 HTTPS 連接到遙測端點（+https://support.netapp.com/+ 和 +https://api.activeiq.netapp.com+）
+** 透過 HTTPS（443）連線到自動更新端點（+https://api.uhc.netapp.com+、+https://gql.aiq.netapp.com+ 和 +https://api.activeiq.netapp.com+）
 ** 至少 4 GB 可用 `/tmp`空間
 
 
