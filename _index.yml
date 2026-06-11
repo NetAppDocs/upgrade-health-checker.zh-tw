@@ -11,6 +11,8 @@ indexpage:
       url: learn-about-upgrade-health-checker.html
     - title: 設定 Upgrade Health Checker
       url: set-up-upgrade-health-checker.html
+    - title: 了解 Upgrade Health Checker 的輸入參數
+      url: upgrade-health-checker-input-parameters.html
   - title: 使用 Upgrade Health Checker
     links:
     - title: 產生 ONTAP 升級報告
@@ -19,9 +21,11 @@ indexpage:
       url: automate-report-upgrade-health-checker.html
   - title: 更多資源
     links:
-    - title: 了解 Upgrade Health Checker 的輸入參數
-      url: upgrade-health-checker-input-parameters.html
     - title: 使用 NetApp Lab on Demand 開始使用 Upgrade Health Checker
       url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/Getting-Started-with-Upgrade-Health-Checker-Using-NetApp-Lab-on-Demand/ba-p/466818
+    - title: 維護升級健全狀況檢查程式
+      url: maintain-upgrade-health-checker.html
+    - title: 疑難排解升級健全狀況檢查程式
+      url: troubleshoot-upgrade-health-checker.html
     - title: 升級健全狀況檢查程式常見問題
       url: faq-upgrade-health-checker.html

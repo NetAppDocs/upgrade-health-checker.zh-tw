@@ -5,9 +5,6 @@
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">步驟</block>
   <block id="bb4632cd1e5a77d2d2a6ad9870b1edf3" category="inline-link-macro">產生 ONTAP 升級報告</block>
   <block id="7c3f7cf7c460927ff3a0856e45060529" category="list-text">建立一個腳本，使用適合您環境的參數執行 Upgrade Health Checker。</block>
-  <block id="4a2fc7904851b98a582cefc5576f3c0b" category="paragraph">以下是一個 cronjob 的範例，該 cronjob 會在週一至週五凌晨 4 點執行該工具。二進位檔案和 config.yaml 檔案已安裝到 /opt/uhc/tool/ 中。</block>
-  <block id="af6a390b44e1466e540d2c134316ae89" category="paragraph">Bash 腳本：</block>
-  <block id="a16591c11e618548314d95d8cb9f466c" category="paragraph">Cron 工作：</block>
   <block id="4a419eed497d5a9cc6325bd677912447" category="list-text">升級健康檢查器完成檢查後，導航至 <block ref="878983117a2370e5b702db49786da067" prefix=" " category="inline-code"></block> 資料夾以查看升級計劃和叢集報告。</block>
   <block id="e634565f95b1012e8b64a5e25f71b4d2" category="admonition">每次執行程式都是獨立的運行，所有相關的資料、日誌和結果都將保存在相應的 <block ref="878983117a2370e5b702db49786da067" prefix=" " category="inline-code"></block> 資料夾中。</block>
   <block id="4e37054133b8a9e3c2adbe0fdc102c34" category="paragraph">日誌路徑和報告路徑如下：</block>
@@ -72,12 +69,6 @@
   <block id="b9497e3cda04aa10a25628bf0b021f6a" category="summary">您可以下載 Upgrade Health Checker，在升級到更新版本的 ONTAP 之前產生現場綜合報告。</block>
   <block id="ce2d4be7e0d93c8b156f834ce3704614" category="doc">下載並設定 Upgrade Health Checker</block>
   <block id="55dcd8cbc9d164986479594db66fd89e" category="paragraph">使用以下規格為 Upgrade Health Checker 設定虛擬機器：</block>
-  <block id="cf0860ffd4dc1929d768f74d92735b75" category="list-text">處理與記憶體：m5.large VM 或同等配置，配備 2 個 vCPU 和 8 GiB RAM。</block>
-  <block id="28a03eb4af7c5f6abf99620ada6c6cfb" category="list-text">儲存：提供一個至少 100 GB 的根磁碟區和一個至少 100 GB 的額外 NFS 磁碟區，以確保在虛擬機器遭到入侵時資料能夠保留。</block>
-  <block id="907609b93268ffb2d43f03dae5c950a3" category="paragraph">如果無法存取網際網路，請諮詢 NetApp 以取得指引。</block>
-  <block id="ad9d14ce6f324c6a7d87f50e2b156ad7" category="list-text">建議套件：安裝 Web 伺服器以方便存取。</block>
-  <block id="513157ecd257a5ac15a2bf664400f97e" category="inline-link-macro">導覽至 NetApp Console Automation Hub</block>
-  <block id="f7516c48eeea343f7fff7d7edbe475e0" category="list-text">下載 Upgrade Health Checker 二進位檔案，方法是 <block ref="d29e77f401a63487e90236d789082319" category="inline-link-macro-rx"></block> 並找到 Upgrade Health Checker 圖示。</block>
   <block id="516fc188e817bb3cd710620ace1129a5" category="list-text">設定 Upgrade Health Checker 虛擬機器，並使用 SSH 將二進位檔案放置在您選擇的位置。</block>
   <block id="0243c7349a37a636f0d08348fc2b1ba7" category="list-text">驗證 Upgrade Health Checker 的數位簽章。</block>
   <block id="2093f13abbe3f1a90a7519a3aba24859" category="paragraph">Upgrade Health Checker 具有公共代碼簽署憑證 <block ref="a1b0111e4810b200f4d7ad5020792ba6" prefix="(" category="inline-code"></block>）以及中間憑證和根憑證鏈 <block ref="2cad9a6c3ca1368f7d8a3bdcbf540946" prefix="(" category="inline-code"></block>）。</block>
@@ -88,7 +79,6 @@
   <block id="94a2cf0aa74e751f770d9240dcbcb074" category="paragraph"><block ref="33a9cc0739a5a17f65e28cf0b260007f" prefix=" " category="inline-code"></block>的輸出結果確認簽名有效。</block>
   <block id="9f58de4245b2fb930c02c3766a7ff23f" category="list-text">為 ONTAP 叢集存取配置服務帳戶和角色。對於透過 Upgrade Health Checker 存取叢集的情況，請將服務角色建立為 REST 角色。</block>
   <block id="15ec8997d97cf2ca0a22a65e524b2811" category="admonition">您可以建立一個 Ansible playbook，以自動將角色和使用者部署到所有 ONTAP 叢集。</block>
-  <block id="d9e228dba301308afb2b46a1a951b363" category="paragraph">您必須為 HTTP 應用程式建立服務帳戶。請使用以下 CLI 指令設定必要的權限：</block>
   <block id="034a1ea726a7fbf3e2fc72fde8ed680d" category="paragraph">例如，如果您有 CyberArk 和 Conjur，您可以設定您的環境，以避免透過 yaml 檔案或命令列傳遞認證資料。</block>
   <block id="f2f2f12c645a941c4c701a0ad14f78da" category="list-text">建立所需的 CyberArk 保險箱：</block>
   <block id="6fecc57bc25e97c77bad1c6d06e7153d" category="list-text">建立一個 Safe（Main-Conjur-Safe），用於保存應用程式憑證和金鑰</block>
@@ -201,7 +191,6 @@
   <block id="daad4dadeda8cd86f01c8ad7f2a30465" category="summary">了解此文件網站的最新內容。</block>
   <block id="a8324b80938b67ec782deb0221494038" category="doc">Upgrade Health Checker 新增功能</block>
   <block id="984ed907e956f5ada3f813bd4a802fd2" category="inline-link-macro">NetApp Console 自動化中心</block>
-  <block id="28418efc88b69f5e65f0a85f816e9eea" category="paragraph">了解 Upgrade Health Checker 的新增功能。您可以透過導航至 <block ref="40053797cfb8864b5eaa5f1f6f7991c2" category="inline-link-macro-rx"></block> 中的 Upgrade Health Checker 磁貼並查看最新的 Upgrade Health Checker 下載檔案，找到更多增強功能資訊。</block>
   <block id="ae47874d4e80f14ff840114a5af1558e" category="paragraph">Upgrade Health Checker 提供了一種全新的解決方案，可產生全面的現場報告，幫助您成功完成 ONTAP 升級。它可以與現有的自動化和編排框架配合使用，從而在升級單一或多個叢集時提高效率。Upgrade Health Checker 支援升級到 ONTAP 9.11.1 及更高版本。</block>
   <block id="ba6d627457ce6f12fac3776c3f84b9f5" category="inline-link-macro">深入瞭解 Upgrade Health Checker</block>
   <block id="c2da3472d13132f746797e82ab607214" category="paragraph"><block ref="311172ef496e6974c00a808505e30585" category="inline-link-macro-rx"></block>。</block>
@@ -224,17 +213,12 @@
   <block id="fbea9b709f9869db351058e2990a8978" category="paragraph">Upgrade Health Checker 支援內部部署 ONTAP 9.11.1 及更新版本的升級。如果您使用 Cloud Volumes ONTAP，請參閱 <block ref="28b2d523b3cffe11b9614de34794e1ab" category="inline-link-macro-rx"></block> 以取得系統升級資訊。</block>
   <block id="d2c961c08b2b0c36adb33c10963a0eb6" category="paragraph">升級健全狀況檢查程式支援內部部署 ONTAP 9.11.1 及更新版本的升級。</block>
   <block id="bef81ef7170eb4c509a54d4673a85016" category="paragraph">若要深入瞭解 Upgrade Health Checker，您可以參考<block ref="6a92c3eccbf08c1bc6caa0a6e92c02bb" category="inline-link-macro-rx"></block>或觀看以下介紹影片。</block>
-  <block id="c2aacd91b1737e52a658e8a6f26cab08" category="list-text">建議的作業系統：任何具有 glibc 函式庫版本 2.28 或更高版本的 Linux 作業系統，以獲得最佳相容性。這包括：</block>
-  <block id="e5051949dc3a37f9077e85df0f1c8a21" category="list-text">Ubuntu 22.04</block>
-  <block id="131e01e2ecbd7de2f9b3f16afa129bcd" category="list-text">RHEL8</block>
-  <block id="100147deec73dd6ee82e8d75ab8b4981" category="list-text">RHEL9</block>
   <block id="3d814f055016b0a5f8d3fd580ea0225d" category="list-text">（選用）設定認證管理以保護對應用程式的存取。</block>
   <block id="bd4dd8e5ccbd7fbe54cf123a8e868745" category="list-text">在網頁瀏覽器、Microsoft Excel 或 JSON 檢視器中開啟報表檔案（名為<block ref="781e82a34e84af3b11fccec6b813c654" prefix=" " category="inline-code"></block>）以檢視報表。如果您在遠端主機上執行 Upgrade Health Checker，請先將報表檔案下載到可以在網頁瀏覽器、Excel 或 JSON 檢視器中檢視報表的機器。</block>
   <block id="e1b8614301d7bec3825b94f88f799128" category="list-text">HTML 報告路徑：<block ref="42dfa52dc698f1548746e65dadae2dba" prefix=" " category="inline-code"></block></block>
   <block id="38fda984a0c5a847814d8f79ebf27b47" category="list-text">Excel 報表路徑：<block ref="b579a006aab9674bb4b5ee8bdc1dc5a8" prefix=" " category="inline-code"></block></block>
   <block id="82e19305023b5eb3613e715db77f833c" category="list-text">JSON 報表路徑：<block ref="fa32c5a3f7d651976fb4d5ab4d04b0b0" prefix=" " category="inline-code"></block></block>
   <block id="c9222608750e8dc2e14567da95cc5574" category="list-text">在網頁瀏覽器、Microsoft Excel 或 JSON 檢視器中開啟報表檔案（名稱為<block ref="781e82a34e84af3b11fccec6b813c654" prefix=" " category="inline-code"></block>）以檢視報表。如果您在遠端主機上執行，請先將報表檔案下載到可以在網頁瀏覽器、Excel 或 JSON 檢視器中檢視報表的機器上。</block>
-  <block id="23f77c02d4b9cce31928ac38c3a2b6f9" category="list-text">託管需求：將 VM 放置在具有叢集連線和網際網路存取的位置，以便實現工具的自動更新。此機器應可透過 HTTPS （443） 存取以下端點以執行自動更新：</block>
   <block id="ef442759af12bb34136648bc4519a80c" category="section-title">2026 年 4 月 15 日</block>
   <block id="46f2cb9a84a7af28bc6cd48700cc9900" category="paragraph">本次 Upgrade Health Checker 文件更新包含以下功能。</block>
   <block id="e1a2132b8b37788de7f02a2417b9fb84" category="paragraph"><block ref="818545cfdb8752d4fd7459b5cbb30ef7" category="inline-link-macro-rx"></block>。</block>
@@ -244,9 +228,164 @@
   <block id="14bcc4201c40840cb4def541b49a3f32" category="sidebar">使用 NetApp Lab on Demand 開始使用 Upgrade Health Checker</block>
   <block id="9878135fc061d82ca23d024a73b70f17" category="list-text">透過 HTTPS 連接到遙測端點（+https://support.netapp.com/+ 和 +https://api.activeiq.netapp.com+）</block>
   <block id="8e902ec9dc6816d99e16bdee4a2eed46" category="list-text">透過 HTTPS（443）連線到自動更新端點（+https://api.uhc.netapp.com+、+https://gql.aiq.netapp.com+ 和 +https://api.activeiq.netapp.com+）</block>
-  <block id="6004dfc86627bd24fdacdda35ddd16c3" category="list-text">+https://api.uhc.netapp.com+</block>
-  <block id="375ac624794a2a89bd6c16e9b07a6656" category="list-text">+https://gql.aiq.netapp.com+</block>
-  <block id="0cf9833b48d6a8ca87c343c5a45e4e84" category="list-text">+https://api.activeiq.netapp.com+</block>
-  <block id="527e62c9953c2bebba6b642861ac2fd8" category="paragraph">此外，請確保虛擬機器可以透過 HTTPS 連接到遙測端點（+https://support.netapp.com+/ 和 +https://api.activeiq.netapp.com+），以便 NetApp 接收有關升級計劃的 AutoSupport 資訊。</block>
   <block id="7da7d55bf35c61004edeb6d3b68a9970" category="list-text">UHC 需要存取新的端點 (+https://api.activeiq.netapp.com+) 才能使自動更新功能正常運作。</block>
+  <block id="fb87b83f5a1f10d68c8aae574e593e92" category="list-text">建立 cron 排程的自動化指令碼以執行 Upgrade Health Checker。以下範例指令碼可針對多個叢集執行 Upgrade Health Checker。二進位檔案和 config.yaml 檔案已安裝至 /opt/uhc/tool/。</block>
+  <block id="896d9c07e1c3a1231ece824cc9567062" category="list-text">設定 cron 工作，讓 script 在週一至週五凌晨 4:00 執行：</block>
+  <block id="ace9e20908f5ac61a1cd07a6d3d60c0f" category="admonition">若要持續監控健康狀況，請使用 <block ref="bfb43d575663966ac38a26eb4b47410c" prefix=" " category="inline-code"></block> 而不需指定特定的升級目標。</block>
+  <block id="2e9f002d0057390dc4b674ce8a3d800e" category="list-text">[[step5]] 在 Upgrade Health Checker 完成檢查後，瀏覽至 <block ref="878983117a2370e5b702db49786da067" prefix=" " category="inline-code"></block> 資料夾以檢視升級計畫和叢集報告。</block>
+  <block id="551f07047fdf0d517a22dcfe3312964b" category="summary">升級健全狀況檢查程式的儀表板。</block>
+  <block id="3e8ecbbf11e529936f5698c3a5fd6a06" category="doc">升級 Health Checker 儀表板</block>
+  <block id="9b465946a9dc97d12d820bd8415f008d" category="paragraph">每次 Upgrade Health Checker 執行結束時，都會在<block ref="eb97244a50f154dcafcd27d6257f80cf" prefix=" " category="inline-code"></block>產生靜態 HTML 儀表板。此儀表板提供近期評估的叢集健全狀況狀態的高階概觀，讓您能夠監控和比較各叢集的升級整備程度。</block>
+  <block id="bafc7ab120beca2fc58036fe47bfc092" category="paragraph">若要稍後重新產生儀表板（無需連接叢集）、請執行：</block>
+  <block id="7215ee9c7d9dc229d2921a40e899ec5f" category="inline-image-macro"></block>
+  <block id="edff9c28ee07f5cc07a47836188c2686" category="paragraph">以下是最近產生的 Upgrade Health Checker 儀表板的視圖。<block ref="a123d0eb24a591f100df7a50344ada33" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="630394c315fe49ad9045e4158725c3fe" category="paragraph">頁面頂端有五張色彩編碼的摘要卡（每張卡也是可選取的篩選器），顯示：</block>
+  <block id="a075fa4490303d9c1443c75b2736e30d" category="list-text">*準備升級：* 最新健康狀況檢查未發現任何阻礙因素的叢集數量，即準備升級的叢集數量。</block>
+  <block id="3f1f632cd20c57889809ec5bf6ab7bbb" category="list-text">*已封鎖：* 叢集數量已封鎖，在封鎖因素解決之前無法升級。</block>
+  <block id="3a6e25b520b3f5881d96f081ff198a81" category="list-text">*錯誤：* 最新 UHC 執行無法完成的叢集數量（例如連線、驗證或資料收集失敗）。</block>
+  <block id="e54508d96af4ea3751d27501025a3451" category="list-text">*過時（&gt;7）：* 上次 UHC 執行時間超過 7 天的叢集數量（健全狀況檢查資料已過時）。</block>
+  <block id="24f22c56e97444ad026c4cfac69a442c" category="list-text">*Fleet 總數：* Fleet 中的叢集總數（儀表板視窗中有執行記錄的叢集，預設為最近 30 天）。</block>
+  <block id="0c65a78b237129936578fe5da1dfe40a" category="paragraph">Fleet 概覽部分詳細介紹了 Fleet 的目前狀態。對於每個叢集，均提供以下資訊（下表顯示了每個叢集的最新執行情況）：</block>
+  <block id="f5d710cbf53ca529c4a7d62a7de34951" category="list-text">*叢集名稱：* 叢集的名稱（其管理 IP 顯示在名稱下方）。</block>
+  <block id="cb32135fa3dab6723b15b6df0c91f5db" category="list-text">*Status：* 叢集的目前狀態：Ready、Blocked、Error 或 Stale。</block>
+  <block id="028ea4296bad1dbdc86179219fecf652" category="list-text">*阻塞問題：*叢集上的阻塞問題數。這些都是升級前必須解決的關鍵問題。</block>
+  <block id="01b1c997fbe376bbd6d7a2968b6ac6d7" category="list-text">*存在風險：* 叢集上存在風險的發現數量。這些是在更新前檢查期間識別出的風險。</block>
+  <block id="35f0e468ccf12525527d16a473d74d80" category="list-text">*警告：*叢集上的警告數量。更新前檢查已完成，但存在一些警告；您可以選擇修復這些警告或繼續更新。</block>
+  <block id="7b75e7fa2e407d7fef084f1fe6283795" category="list-text">*已跳過：*叢集上跳過的檢查數量。</block>
+  <block id="7f4617478438df00d0d45aa69514596a" category="list-text">*目標版本：* 使用者計畫升級到的 ONTAP 版本。（如果您只想對目前正在執行的版本進行健全狀況檢查，則可以與目前版本相同。）</block>
+  <block id="0fcf67e865e3049ade1666cadb12abbc" category="list-text">*節點：* 叢集的節點，每個節點都顯示為節點名稱及其硬體型號（例如 eurbkpcla (FAS8200)）。</block>
+  <block id="a319f39dbc6923a205daf0321183a106" category="list-text">*報告：* 執行可用的報告格式：HTML、JSON、Excel、Log。</block>
+  <block id="9ef3ab67f95cc83071b8f0d04aa74267" category="list-text">*上次執行：* 上次 Upgrade Health Checker 執行的日期和時間（以相對「X 天前」表示）。</block>
+  <block id="2ff94ba52e8ff2610f4d806fd7e21e3f" category="paragraph">您可以選擇 *Reload* 來重新整理頁面。使用 *Search* 列來搜尋特定叢集的詳細資料。</block>
+  <block id="426256c0b300d1b909c9960a8b4f4502" category="list-text">列出產生的報告檔案：</block>
+  <block id="d4e68006aa10a272ac99f5258e04bce0" category="paragraph"><block ref="337ca2600c5aac5c10555f8d39e9a1d6" prefix="" category="inline-code"></block></block>
+  <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">接下來</block>
+  <block id="d21267b32d0903f82a079081555c0ff2" category="paragraph">產生升級計畫和叢集報告後、您可以檢視<block ref="cb5987a19cc29bdff093adf9e3c49ecc" category="inline-link-macro-rx"></block>以取得執行期間評估之叢集健全狀況狀態的詳細資料。</block>
+  <block id="ded140dc9fd3fca8297ae91b7e9d1724" category="summary">Upgrade Health Checker 的維護工作。</block>
+  <block id="ecbaa4ec2fe853662f425db1a8a36e9c" category="doc">維護升級健全狀況檢查程式</block>
+  <block id="cf59700fb6f14790204513a841b1810e" category="paragraph">定期檢查更新、監控日誌以發現任何重複出現的問題，並確保工具已針對您的環境正確配置，從而維護 Upgrade Health Checker。這可以確保該工具可靠且有效率地運作。如果您遇到新問題或需要進一步協助，請參閱 NetApp 支援資源或聯絡 NetApp 支援人員。</block>
+  <block id="dcb646493350ef44bd676f1fd9e10df9" category="section-title">/tmp 空間管理</block>
+  <block id="cefcb82b87001c9160e27c413751194f" category="paragraph">Upgrade Health Checker 會在執行過程中將其元件解壓縮到 <block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block> 目錄中。如果您遇到 <block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block> 空間不足的問題，請考慮以下幾點：</block>
+  <block id="6bfccd562c4557fb4f938fee42c0f5a5" category="list-text">檢查 <block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block> 中的可用空間，確保至少有 4 GB 的可用空間，以便工具有效運作。</block>
+  <block id="d85f324a8e882b998ede63ba68005eb6" category="list-text">從<block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block>刪除任何不必要的檔案以釋放空間。</block>
+  <block id="47673696ae151be397814ee68344241c" category="section-title">執行目錄清理</block>
+  <block id="cd260971d4895e521192f2714cc37c63" category="paragraph">Upgrade Health Checker 會為每次執行建立一個唯一的執行目錄，其中包含記錄和結果。若要管理磁碟空間、請設定自動清理程序、以便在一定時間（例如 30 天）後移除舊的執行目錄。</block>
+  <block id="919c77fac60e97628bf166a4aa7c1a72" category="section-title">自動更新</block>
+  <block id="29d681abeb8160231b2f25e3892eb831" category="paragraph">Upgrade Health Checker 會在每次執行後，在網際網路連線可用時自動檢查更新。這可確保您擁有最新的功能、改進和錯誤修復。如果沒有網際網路存取，您可以從 <block ref="40053797cfb8864b5eaa5f1f6f7991c2" category="inline-link-macro-rx"></block> 手動下載最新版本。</block>
+  <block id="f1c254c35bb2f7f754353006dc018672" category="paragraph">若要停用自動更新、請將下列內容新增至 <block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block> 檔案：</block>
+  <block id="2cb05e4bb7830be982f0922fed86b4cd" category="cell">元件</block>
+  <block id="875b0e30e76428bc0706b781b36b31aa" category="cell">規格</block>
+  <block id="aa6ad543d0b70e402b03f35585f4d9b4" category="paragraph">*VM*</block>
+  <block id="48fd9f67eafde4d21e1c831496b5bc31" category="cell">m5.large VM 或同等配置，配備 2 個 vCPU 和 8 GiB RAM</block>
+  <block id="03c63c1d02a71129f7d335a163ab8ba3" category="paragraph">*作業系統*</block>
+  <block id="99ec8dcb0ed1c88eb9753d983a56b169" category="cell">任何安裝了 glibc 函式庫版本 2.28 或更高版本的 Linux 作業系統（Ubuntu 22.04、RHEL8 或 RHEL9）</block>
+  <block id="10f7d0fe3ffe2ba74337cff47755ff6a" category="paragraph">*磁碟空間*</block>
+  <block id="6e608f5579351cbba52e3d90b1722cdb" category="cell">至少 4 GB 可用空間（建議 8 GB）在<block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block>具有執行權限</block>
+  <block id="28d088a01674ea58931c1dffe64fd8b0" category="paragraph">*網路*</block>
+  <block id="74faaa8963c90dee70382e7ae7b6debe" category="cell">透過 HTTPS 連線至 ONTAP 叢集管理 LIF</block>
+  <block id="176c0fe1d322d9a51e31204aad32eae6" category="paragraph">*ONTAP 版本*</block>
+  <block id="92545160fc537c4d5544686c4bcdf2e5" category="cell">執行 ONTAP 9.11.1 或更新版本的叢集</block>
+  <block id="71158affd0036fb2466b1fb9e9ae37b4" category="paragraph">*託管需求*</block>
+  <block id="fffb00fef85cf67efb62289a6532ecf2" category="cell">將 VM 放置在具有叢集連線和網際網路存取的位置，以便實現工具的自動更新。此機器應可透過 HTTPS（443）存取以下端點，以執行自動更新並讓 NetApp 接收有關升級計畫的 AutoSupport 資訊：<block ref="b6fcb4b13f321b8cb388d57eb2e860ab" category="inline-link-rx"></block> <block ref="072b499eacb5befcbdab2d6cc0fe02a0" category="inline-link-rx"></block> <block ref="53fb0fc7c544c164b74ed43fbccd4384" category="inline-link-rx"></block> <block ref="1e149c7d9ce6dc9e42acefe98045ece8" category="inline-link-rx"></block></block>
+  <block id="6416dbbf5267211166cfea2ed336e59e" category="paragraph">*建議套件*</block>
+  <block id="38f5250c3529fb3f11c0374bdaf9aeaa" category="cell">安裝 Web 伺服器以方便存取</block>
+  <block id="6063847442b88d203c59c2c6de6f2e53" category="admonition">請確保虛擬機器可以透過 HTTPS（443）連接到自動更新和遙測端點<block ref="dff1129755a63688cdc5de28dfe608ad" category="inline-link-rx"></block>和<block ref="b6e65db6bdd125b2fca849ddf715a294" category="inline-link-rx"></block>，以便 NetApp 接收有關升級計劃的 AutoSupport 資訊。如果無法存取網際網路，則必須手動下載最新版本的 Upgrade Health Checker。</block>
+  <block id="fd2112d1826143e744670603b8189778" category="list-text">瀏覽至<block ref="40053797cfb8864b5eaa5f1f6f7991c2" category="inline-link-macro-rx"></block>並找到 Upgrade Health Checker 磚，以下載 Upgrade Health Checker 二進位檔。</block>
+  <block id="0028a1b2c66adc5ceda52b78a1cdb74d" category="paragraph">您必須為 HTTP 應用程式建立服務帳戶。請使用以下 CLI 指令設定必要的權限：</block>
+  <block id="30f60d67f457bb040dffde52197a54da" category="list-title">相關資訊</block>
+  <block id="075d48f32d1c61c7bc401a6884f7cf92" category="list-text"><block ref="075d48f32d1c61c7bc401a6884f7cf92" category="inline-link-macro-rx"></block></block>
+  <block id="2bc7aac0df718ec4b8d51eacce3de379" category="summary">您可以設定電子郵件以接收 Upgrade Health Checker 報告。</block>
+  <block id="403a25a6039c0e1bf716eb5582433b74" category="doc">透過電子郵件接收升級健全狀況檢查程式報告</block>
+  <block id="860efc9b661f4d41df0b3275d4a01f9e" category="paragraph">您可以將電子郵件整合到 Upgrade Health Checker 中，以便在收件匣中接收報告。您可以透過 config.yaml 檔案或命令列參數啟用此功能。啟用後，Upgrade Health Checker 會使用 SMTP 伺服器將產生的報告（HTML、Excel 或 JSON 格式）傳送給一個或多個已設定的收件者。停用此功能後，將不會發送任何報告。如果報告產生失敗且已啟用電子郵件功能，則會將日誌檔案傳送給已設定的收件者。</block>
+  <block id="e152f7a0987cd387b3f0af29e5da3550" category="section-title">使用 config.yaml 檔案進行設定</block>
+  <block id="7b717dfd9ad1ff92fe9062d96808c202" category="list-text">在 config.yaml 檔案中啟用電子郵件報告。</block>
+  <block id="a5506b391e227dfd4ee5fcf46a44f411" category="list-text">提供 SMTP 組態設定以及寄件者詳細資料和主旨：</block>
+  <block id="dc0335c87191d92d81fca87bdb3e9a6d" category="list-text">提供收件者電子郵件地址，並設定透過電子郵件傳送的報告格式，例如 HTML、EXCEL、JSON、ALL：</block>
+  <block id="becf91e5465bdb37d46d763d4aab426c" category="section-title">使用命令列引數進行組態設定</block>
+  <block id="479f67ea57ff0730833a90e8cb344675" category="list-text">使用命令列引數啟用電子郵件報告：</block>
+  <block id="86687a26ed58885822822c492bb525c6" category="list-text">提供收件者電子郵件地址：</block>
+  <block id="50473cade6ce5b072ef594d97e30f293" category="list-text">設定透過電子郵件傳送的報告格式，例如 HTML、EXCEL、JSON：</block>
+  <block id="6cde847387b92f199ce8915b3692ac37" category="paragraph">以下三個屬性既可以透過命令列參數配置，也可以透過 config.yaml 檔案配置；其餘屬性只能在 config.yaml 檔案中配置：</block>
+  <block id="02d162bc011d2df35f8cd6f906d7d60a" category="list-text">已啟用電子郵件</block>
+  <block id="f46e85a0de52240f550f9daab9d6086c" category="list-text">電子郵件收件者</block>
+  <block id="ea263adf46b6d5e874d790afd83f0987" category="list-text">電子郵件報告格式</block>
+  <block id="2b6bf35359882281e9a439e9cfcdfd7a" category="paragraph">請注意，如果提供了命令列參數，則會覆寫 config.yaml 檔案的值。</block>
+  <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">例如：</block>
+  <block id="1cc4274eac4a90919037379ad302ee24" category="summary">疑難排解升級健全狀況檢查程式：ONTAP 升級的常見問題、錯誤和解決方案。</block>
+  <block id="33fc1d20f1d2e7e8d9ea39cc1c1e260b" category="doc">疑難排解升級健全狀況檢查程式</block>
+  <block id="8bbf781921fc79273f7113760a28cdce" category="paragraph">了解如何疑難排解常見的 Upgrade Health Checker 問題，並解決可能阻止 ONTAP 升級規劃的錯誤。</block>
+  <block id="7a4e5e5bc542eae2d10e3506f839f2ae" category="section-title">疑難排解問題</block>
+  <block id="d2131ff4bb2c3380d5fb369390728b83" category="paragraph">{empty} + {empty}</block>
+  <block id="ea4508c977fcb9a0e48f3ded870a27a8" category="section-title">問題：驗證或認證錯誤</block>
+  <block id="ad4a1b332ef02eba5753f8bbcb6925cb" category="paragraph">*症狀：*</block>
+  <block id="8a15bd0e2ae7adaa325b7140fd8918ef" category="paragraph">這些錯誤表示 Upgrade Health Checker 無法使用提供的認證對 ONTAP 叢集進行驗證。這可能是由於使用者名稱或密碼不正確、使用者帳戶權限不足，或帳戶已被鎖定或停用所造成。</block>
+  <block id="dee8d5233a1bf8bca6b506b1fada7ce9" category="paragraph">*解決方案：*</block>
+  <block id="00d459b7c0c08efe897940253729fe39" category="list-text">確認使用者名稱和密碼正確無誤</block>
+  <block id="d52be7383d150e0b81d21613dc8c06c0" category="list-text">確保使用者擁有足夠的 ONTAP REST API 權限</block>
+  <block id="9f566b2667cc3d86cf38f0b870985d7f" category="list-text">檢查帳戶是否已鎖定或停用</block>
+  <block id="cfd63c7012a6be1846cea9a45dc483c9" category="section-title">問題：自動更新失敗</block>
+  <block id="8c81589f2957e3aa70aecb06fd217ca8" category="paragraph">這些錯誤表示 Upgrade Health Checker 無法連線至網際網路以檢查或下載更新。這可能是由於網路連線問題、防火牆規則封鎖存取或 Proxy 設定配置不正確所造成。</block>
+  <block id="ae20b15476604fe269fbce10de03e6a4" category="list-text">檢查網際網路連線：</block>
+  <block id="d046b10a2f8c751c23b7f911ea3773c6" category="list-text">檢查磁碟空間（需要 1 GB）：</block>
+  <block id="ad898993f940021bd3ad23b42accb44e" category="paragraph">{empty} {empty}</block>
+  <block id="431c6a71d852d1ddd6e36d0967692092" category="section-title">問題：二進位檔案啟動時間過長</block>
+  <block id="802c6872b04f64b431e11ebba074b480" category="paragraph">*原因：* 該二進位檔案是自包含的，需要在執行前解壓縮自身。</block>
+  <block id="864ce8d1a7259f74a8beb5d3625bec3a" category="paragraph">*預期行為：* 首次執行可能需要幾秒鐘才能載入。這是正常現象。{empty} + {empty} + {empty}</block>
+  <block id="fec89051f62c7e3434e266910c40b963" category="section-title">問題：/tmp 上出現「權限被拒絕」或「無法執行二進位檔案」</block>
+  <block id="e3df8e48656415667871afc1aa46fcc7" category="paragraph">當工具無法執行 <block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block> 目錄中的檔案時，可能會發生此錯誤，該目錄用於擷取和執行工具的元件。這可能是由於 <block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block> 目錄的權限受限或安全性原則阻止從此位置執行所致。</block>
+  <block id="be2f1b00715f445e5a837d81e93d62aa" category="list-text">檢查 <block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block> 是否已啟用 <block ref="5dff25754d04a3c3149f3e6f121b26d9" prefix=" " category="inline-code"></block>：</block>
+  <block id="fd4811e1fd80f374db9d4833e17a8070" category="list-text">[[step2]] 重新掛載 <block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block> 與 <block ref="52fb3679b07eb74d90784e612ca5cb30" prefix=" " category="inline-code"></block>（需要系統管理員 root 權限）：</block>
+  <block id="f1e0220096b641cba448abe4b801e9c3" category="list-text">[[step3]] 如果由於限制條件無法執行上一步，您可以設定該工具以使用具有適當權限的備用暫存目錄：</block>
+  <block id="6aebcbbedc2f36d843680b1961802fd7" category="admonition">若要使此變通方法生效，自訂路徑必須先存在。如果該路徑尚不存在,則不會建立它,而是回退到使用<block ref="d42b9c57d24cf5db3bd8d332dc35437f" prefix=" " category="inline-code"></block>。</block>
+  <block id="73b2df10f7b67ded6ab6cf1b86991dbf" category="list-text">[[step4]] 調整權限或變更暫存目錄後，請再次執行工具，查看問題是否已解決。+</block>
+  <block id="1e884a4c2675ebfd0594c1b730de2f64" category="section-title">問題：連線逾時</block>
+  <block id="9c9127499d341b7b251a98a8ef0a92e6" category="list-text">檢查與叢集的網路連線</block>
+  <block id="496ee7b530c0419300f81733e67066fa" category="list-text">確認沒有防火牆阻止 HTTPS（443）流量</block>
+  <block id="b8027da214d9dd9b9cb38a2128abbb32" category="list-text">檢查叢集是否回應正常且未處於高負載狀態 +</block>
+  <block id="48e556675d42e854384e37e27ae1bd53" category="section-title">問題：磁碟空間不足</block>
+  <block id="df7a028433a6352a0525ed8745c71f02" category="list-text">檢查磁碟空間：</block>
+  <block id="f38feba100e94a26947698ffb65787d0" category="list-text">清理舊執行記錄：</block>
+  <block id="66b125a667f8595b760441dcffc2f2a6" category="list-text">清理臨時檔案：</block>
+  <block id="dd06ae0a4def45ac4ec706a7653b0974" category="section-title">問題：執行路徑無效</block>
+  <block id="7bfb219958b40ed65b0f654874dbf0f7" category="list-text">確保執行輸出目錄存在且可寫入</block>
+  <block id="d98b3f0d77b985709129b1f1e16a37c9" category="list-text">透過 CLI 指定有效路徑：<block ref="fed3f55a42a2951d8cc17fe74f2c5c7c" prefix=" " category="inline-code"></block></block>
+  <block id="99f74f7362afe78c4b1c1bfb8fce3c78" category="list-text">在 config.yaml 中設定：<block ref="90e52bc4c2ec4e18601e845838c2d206" prefix=" " category="inline-code"></block> +</block>
+  <block id="eb29348b6dd8a887a4e448bd076a0d68" category="section-title">問題：目標 ONTAP 版本無效</block>
+  <block id="a55a0697bcad08d11e1db77706944702" category="list-text">驗證目標版本字串格式（例如 "9.16.1"）</block>
+  <block id="5e3b1ad08f40862590377b4dc658847f" category="list-text">確保目標版本高於或等於目前叢集版本</block>
+  <block id="eac4bea114f45fbcde72bffa9676859b" category="list-text">使用 "current" 可保留現有的 ONTAP 版本：<block ref="38907dfdc2d957c2999f04423c2c8ce8" prefix=" " category="inline-code"></block> +</block>
+  <block id="5b584e89824b05e3b4d6dd81e09be721" category="section-title">問題：簽名驗證失敗</block>
+  <block id="dd578bb71be5a3c860dfc426be450035" category="paragraph">*原因：* 下載的更新檔案可能已損壞或已被竄改。</block>
+  <block id="465c2635767beccedfa5e57f64aefbc4" category="paragraph">*解決方案：*</block>
+  <block id="c258ae31abc09d68b232660cf7929016" category="list-text">手動更新 - 從 NetApp 支援網站下載</block>
+  <block id="9240376b345d1a483c6221db6257c009" category="list-text">手動驗證簽名：</block>
+  <block id="e1b2ac6754c6304f9652925768ee6151" category="section-title">問題：遙測上傳失敗</block>
+  <block id="f7a8cf20633c17be3d8f1175fa56f991" category="list-text">檢查與遙測端點的連線能力：</block>
+  <block id="0ff7ece9cab0856a25fdf06f1d8c6fd5" category="section-title">問題：「UPDATE IN PROGRESS」鎖定檔案</block>
+  <block id="8c9b7d617b8e2601babcd67f5004fd9e" category="paragraph">更新進行中</block>
+  <block id="6f111ca5b9888aeee3176fa324d766ab" category="paragraph">UHC 自動更新的另一個執行個體目前正在執行中。請等待更新完成後再執行。</block>
+  <block id="7b2030c6d7f35bf705b3fef2fd25f4df" category="paragraph">*原因：*先前更新程序的鎖定檔案仍存在。</block>
+  <block id="a1a9bf05bd0200049b8b2ed1d648f98d" category="list-text">*請稍候：* 更新通常會在 1-2 分鐘內完成。</block>
+  <block id="2458156c4470b544d2fbae9246d52eb6" category="list-text">*檢查是否過期：*（1 小時後自動清理）：</block>
+  <block id="a52b439279a01b88be6bc7a65776dd5e" category="list-text">[[step3]] *如有必要，進行手動清理：*</block>
+  <block id="2938c7f7e560ed972f8a4f68e80ff834" category="section-title">儀表板</block>
+  <block id="7576434732b4f07a539d094d4942f9aa" category="paragraph"><block ref="c6ea40941291b612a71c04fdbc6d130c" prefix=" " category="inline-code"></block> 參數會從 <block ref="7056e6d35ec8691b2eb0b8b0db5a7ba0" prefix=" " category="inline-code"></block> 的現有執行重新產生儀表板，而不需要聯絡叢集。您可以使用它在正常執行之外重新整理機群檢視。儀表板提供最近評估過的所有叢集健全狀況狀態的高階概觀，讓您能夠在單一位置輕鬆監控和比較多個叢集的升級整備程度。您可以在 Web 瀏覽器中開啟儀表板，以便快速檢視每個叢集的健全狀況狀態、潛在阻礙因素和風險。</block>
+  <block id="28849b8ddf75d322380a176b61c9b16f" category="list-text">CLI 參數：<block ref="c6ea40941291b612a71c04fdbc6d130c" prefix=" " category="inline-code"></block></block>
+  <block id="7d9f16c834f0164eb43b6f75f5a9e7ae" category="paragraph">了解 Upgrade Health Checker（UHC）的新增功能。您可以透過導航至 <block ref="40053797cfb8864b5eaa5f1f6f7991c2" category="inline-link-macro-rx"></block> 中的 Upgrade Health Checker 磁貼並查看最新的 Upgrade Health Checker 下載檔案，找到更多增強功能資訊。</block>
+  <block id="13a1b8a317b4b6dbe05a3757a911ea12" category="section-title">2026 年 6 月 11 日</block>
+  <block id="e6eed926cf73beb76f76f27b527327f4" category="list-text">UHC 支援將報告直接傳送到您的收件匣。</block>
+  <block id="3a506ebe2da361710132cacb844329a5" category="paragraph"><block ref="10a34a9ef91da7f8d2b68c9cc9a95cd4" category="inline-link-macro-rx"></block>。</block>
+  <block id="dd968dcb3c3b548604c091104c8e83cf" category="list-text">引入了 <block ref="c6ea40941291b612a71c04fdbc6d130c" prefix=" " category="inline-code"></block> 參數，該參數可在 <block ref="7056e6d35ec8691b2eb0b8b0db5a7ba0" prefix=" " category="inline-code"></block> 從現有執行中重新產生儀表板，而無需連接叢集。它提供了所有近期存取過的叢集健全狀況狀態的高階概觀。</block>
+  <block id="e06741797ed1dc0a966f53071a491401" category="inline-link-macro">儀表板參數</block>
+  <block id="2db3ba2e9c7b7806153c255359ca61d2" category="paragraph"><block ref="cb5987a19cc29bdff093adf9e3c49ecc" category="inline-link-macro-rx"></block>, <block ref="742c6b812eaf7871aa5cdafc51efea43" category="inline-link-macro-rx"></block>.</block>
+  <block id="b8625ecfb276c9ebf1ede5fca0088ca8" category="list-text">推出全新的「維護」、「疑難排解」和「常見問題」章節。</block>
+  <block id="1ab8a927937778a6689a579c30b0ccaa" category="list-text">定期檢查更新、監控日誌中是否有任何重複出現的問題，並確保工具已針對您的環境正確配置，從而維護 Upgrade Health Checker。</block>
+  <block id="dee801512c32b9a598a47b86ba488f76" category="paragraph"><block ref="4e186b263c1e6fa5ae08ef69bdaf2995" category="inline-link-macro-rx"></block>。</block>
+  <block id="f12f1c86955a028fd35ab9eaff2150a3" category="list-text">疑難排解常見的升級健全狀況檢查程式問題，並解決可能阻礙 ONTAP 升級規劃的錯誤。</block>
+  <block id="baa81debda1c4b19727722cd64a108d4" category="paragraph"><block ref="3597fe8c8063c1708eb12f618dae69b7" category="inline-link-macro-rx"></block>。</block>
+  <block id="dedb0a1692447383a23033fe650d7fb3" category="paragraph"><block ref="6a92c3eccbf08c1bc6caa0a6e92c02bb" category="inline-link-macro-rx"></block>。</block>
+  <block id="467d7cccaec467a4d67d9bfedb9bccbf" category="sidebar">設定透過電子郵件接收報告</block>
+  <block id="0ff45cc75d0cd4d181c04f8f358944c3" category="sidebar">維護、疑難排解、常見問題</block>
+  <block id="ade01a5a398372194a42c36e9f5279ac" category="sidebar">維護</block>
+  <block id="d60c463bb4096f3ed4bd1618626dfe10" category="sidebar">疑難排解</block>
 </blocks>

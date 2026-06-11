@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: maintain-upgrade-health-checker.html 
+keywords: upgrade, health, checker, maintain, maintenance tasks, 
+summary: Upgrade Health Checker 的維護工作。 
+---
+= 維護升級健全狀況檢查程式
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+定期檢查更新、監控日誌以發現任何重複出現的問題，並確保工具已針對您的環境正確配置，從而維護 Upgrade Health Checker。這可以確保該工具可靠且有效率地運作。如果您遇到新問題或需要進一步協助，請參閱 NetApp 支援資源或聯絡 NetApp 支援人員。
+
+
+
+== /tmp 空間管理
+
+Upgrade Health Checker 會在執行過程中將其元件解壓縮到  `/tmp` 目錄中。如果您遇到  `/tmp` 空間不足的問題，請考慮以下幾點：
+
+* 檢查  `/tmp` 中的可用空間，確保至少有 4 GB 的可用空間，以便工具有效運作。
+* 從 `/tmp`刪除任何不必要的檔案以釋放空間。
+
+
+
+
+== 執行目錄清理
+
+Upgrade Health Checker 會為每次執行建立一個唯一的執行目錄，其中包含記錄和結果。若要管理磁碟空間、請設定自動清理程序、以便在一定時間（例如 30 天）後移除舊的執行目錄。
+
+[listing]
+----
+# Delete UHC data older than 30 days (recommended for automated workflows)
+find /mnt/nfs/uhc/runs -type d -mtime +30 -exec rm -rf {} + 2>/dev/null
+
+# Schedule as a weekly cron job
+0 3 * * 0 find /mnt/nfs/uhc/runs -type d -mtime +30 -exec rm -rf {} + 2>/dev/null
+----
+
+
+== 自動更新
+
+Upgrade Health Checker 會在每次執行後，在網際網路連線可用時自動檢查更新。這可確保您擁有最新的功能、改進和錯誤修復。如果沒有網際網路存取，您可以從 link:https://console.netapp.com/automationHub["NetApp Console 自動化中心"^] 手動下載最新版本。
+
+若要停用自動更新、請將下列內容新增至  `config.yaml` 檔案：
+
+[listing]
+----
+AUTO_UPDATE:
+  ENABLED: false
+----

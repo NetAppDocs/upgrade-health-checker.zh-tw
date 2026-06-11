@@ -21,32 +21,49 @@ Upgrade Health Checker 支援內部部署 ONTAP 9.11.1 及更新版本的升級�
 .開始之前
 使用以下規格為 Upgrade Health Checker 設定虛擬機器：
 
-* 處理與記憶體：m5.large VM 或同等配置，配備 2 個 vCPU 和 8 GiB RAM。
-* 建議的作業系統：任何具有 glibc 函式庫版本 2.28 或更高版本的 Linux 作業系統，以獲得最佳相容性。這包括：
-+
-** Ubuntu 22.04
-** RHEL8
-** RHEL9
+|===
+| 元件 | 規格 
 
 
-* 儲存：提供一個至少 100 GB 的根磁碟區和一個至少 100 GB 的額外 NFS 磁碟區，以確保在虛擬機器遭到入侵時資料能夠保留。
-* 託管需求：將 VM 放置在具有叢集連線和網際網路存取的位置，以便實現工具的自動更新。此機器應可透過 HTTPS （443） 存取以下端點以執行自動更新：
-+
-** +https://api.uhc.netapp.com+
-** +https://gql.aiq.netapp.com+
-** +https://api.activeiq.netapp.com+
-+
-如果無法存取網際網路，請諮詢 NetApp 以取得指引。
+ a| 
+*VM*
+| m5.large VM 或同等配置，配備 2 個 vCPU 和 8 GiB RAM 
 
 
+ a| 
+*作業系統*
+| 任何安裝了 glibc 函式庫版本 2.28 或更高版本的 Linux 作業系統（Ubuntu 22.04、RHEL8 或 RHEL9） 
 
-* 建議套件：安裝 Web 伺服器以方便存取。
+
+ a| 
+*磁碟空間*
+| 至少 4 GB 可用空間（建議 8 GB）在 `/tmp`具有執行權限 
 
 
-此外，請確保虛擬機器可以透過 HTTPS 連接到遙測端點（+https://support.netapp.com+/ 和 +https://api.activeiq.netapp.com+），以便 NetApp 接收有關升級計劃的 AutoSupport 資訊。
+ a| 
+*網路*
+| 透過 HTTPS 連線至 ONTAP 叢集管理 LIF 
+
+
+ a| 
+*ONTAP 版本*
+| 執行 ONTAP 9.11.1 或更新版本的叢集 
+
+
+ a| 
+*託管需求*
+| 將 VM 放置在具有叢集連線和網際網路存取的位置，以便實現工具的自動更新。此機器應可透過 HTTPS（443）存取以下端點，以執行自動更新並讓 NetApp 接收有關升級計畫的 AutoSupport 資訊：https://support.netapp.com/[] https://api.uhc.netapp.com[] https://gql.aiq.netapp.com[] https://api.activeiq.netapp.com[] 
+
+
+ a| 
+*建議套件*
+| 安裝 Web 伺服器以方便存取 
+|===
+
+NOTE: 請確保虛擬機器可以透過 HTTPS（443）連接到自動更新和遙測端點(https://support.netapp.com/[]和 https://api.activeiq.netapp.com[]，以便 NetApp 接收有關升級計劃的 AutoSupport 資訊。如果無法存取網際網路，則必須手動下載最新版本的 Upgrade Health Checker。
 
 .步驟
-. 下載 Upgrade Health Checker 二進位檔案，方法是 link:https://console.netapp.com/automationHub["導覽至 NetApp Console Automation Hub"] 並找到 Upgrade Health Checker 圖示。
+. 瀏覽至link:https://console.netapp.com/automationHub["NetApp Console 自動化中心"^]並找到 Upgrade Health Checker 磚，以下載 Upgrade Health Checker 二進位檔。
 . 設定 Upgrade Health Checker 虛擬機器，並使用 SSH 將二進位檔案放置在您選擇的位置。
 . 驗證 Upgrade Health Checker 的數位簽章。
 +
@@ -156,6 +173,10 @@ conjur_password: "{{ lookup('cyberark.conjur.conjur_variable', 'prodvault/devops
 ----
 
 
+
+
+.相關資訊
+* link:upgrade-health-checker-input-parameters.html["了解 Upgrade Health Checker 的輸入參數"]
 
 
 .接下來呢？

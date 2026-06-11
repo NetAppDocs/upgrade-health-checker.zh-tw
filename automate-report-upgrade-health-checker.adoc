@@ -31,29 +31,50 @@ Upgrade Health Checker 支援內部部署 ONTAP 9.11.1 及更新版本的升級�
   --target-ontap-version=<target-ontap-version> \
   --accept-eula=true
 ----
-+
-以下是一個 cronjob 的範例，該 cronjob 會在週一至週五凌晨 4 點執行該工具。二進位檔案和 config.yaml 檔案已安裝到 /opt/uhc/tool/ 中。
-
-+
-Bash 腳本：
-
+. 建立 cron 排程的自動化指令碼以執行 Upgrade Health Checker。以下範例指令碼可針對多個叢集執行 Upgrade Health Checker。二進位檔案和 config.yaml 檔案已安裝至 /opt/uhc/tool/。
 +
 [listing]
 ----
 #!/bin/bash
-cd /opt/uhc/tool
-/opt/uhc/tool/uhc --accept-eula true --cluster-ip cluster-mgmt1.example.com --target-ontap-version current --cluster-username uhctool --cluster-password passw0rd
-/opt/uhc/tool/uhc --accept-eula true --cluster-ip cluster-mgmt2.example.com --target-ontap-version 9.14.1 --cluster-username uhctool --cluster-password passw0rd
-----
-+
-Cron 工作：
+# /opt/uhc/tool/uhccron.sh
+# Automated weekly Upgrade Health Checker run for all managed clusters
+# Schedule: Every Monday to Friday at 4am
 
+cd /opt/uhc/tool/
+
+# Cluster1 - keep current version (health check only)
+/opt/uhc/tool/uhc --cluster-ip cluster1-mgmt.example.com \ --target-ontap-version current
+
+# Cluster2 - target upgrade to 9.16.1
+/opt/uhc/tool/uhc --cluster-ip cluster2-mgmt.example.com \ --target-ontap-version 9.16.1
+
+# Cluster3 - target upgrade to 9.17.1
+/opt/uhc/tool/uhc --cluster-ip cluster3-mgmt.example.com \ --target-ontap-version 9.17.1
+
+# Cluster4 - by IP address
+/opt/uhc/tool/uhc --cluster-ip 10.20.30.40 --target-ontap-version 9.16.1
+
+# Add additional clusters as needed
+
+# Make the script executable (one-time setup step)
+chmod +x /opt/uhc/tool/uhccron.sh
+----
+. 設定 cron 工作，讓 script 在週一至週五凌晨 4:00 執行：
 +
 [listing]
 ----
-0 4 * * 1-5 /usr/local/bin/uhccron.sh
+# Edit the crontab for the uhctool user
+crontab -e
+
+# Add the following line to schedule the script to run Monday through Friday at 4:00 am
+0 4 * * 1-5 /opt/uhc/tool/uhccron.sh
 ----
-. 升級健康檢查器完成檢查後，導航至  `runs` 資料夾以查看升級計劃和叢集報告。
+
+
+
+NOTE: 若要持續監控健康狀況，請使用  `--target-ontap-version current` 而不需指定特定的升級目標。
+
+. [[step5]] 在 Upgrade Health Checker 完成檢查後，瀏覽至  `runs` 資料夾以檢視升級計畫和叢集報告。
 +
 
 NOTE: 每次執行程式都是獨立的運行，所有相關的資料、日誌和結果都將保存在相應的  `runs` 資料夾中。

@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: dashboard-upgrade-health-checker.html 
+keywords: upgrade, health, checker, dashboard, for upgrade health checker 
+summary: 升級健全狀況檢查程式的儀表板。 
+---
+= 升級 Health Checker 儀表板
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+每次 Upgrade Health Checker 執行結束時，都會在 `runs/dashboard/index.html`產生靜態 HTML 儀表板。此儀表板提供近期評估的叢集健全狀況狀態的高階概觀，讓您能夠監控和比較各叢集的升級整備程度。
+
+若要稍後重新產生儀表板（無需連接叢集）、請執行：
+
+[listing]
+----
+./uhc --dashboard
+./uhc --dashboard --runs-path /custom/output
+./uhc --dashboard --config-path /path/to/custom_config.yaml
+----
+以下是最近產生的 Upgrade Health Checker 儀表板的視圖。image:../media/dashboard3.gif[""]
+
+頁面頂端有五張色彩編碼的摘要卡（每張卡也是可選取的篩選器），顯示：
+
+* *準備升級：* 最新健康狀況檢查未發現任何阻礙因素的叢集數量，即準備升級的叢集數量。
+* *已封鎖：* 叢集數量已封鎖，在封鎖因素解決之前無法升級。
+* *錯誤：* 最新 UHC 執行無法完成的叢集數量（例如連線、驗證或資料收集失敗）。
+* *過時（>7）：* 上次 UHC 執行時間超過 7 天的叢集數量（健全狀況檢查資料已過時）。
+* *Fleet 總數：* Fleet 中的叢集總數（儀表板視窗中有執行記錄的叢集，預設為最近 30 天）。
+
+
+Fleet 概覽部分詳細介紹了 Fleet 的目前狀態。對於每個叢集，均提供以下資訊（下表顯示了每個叢集的最新執行情況）：
+
+* *叢集名稱：* 叢集的名稱（其管理 IP 顯示在名稱下方）。
+* *Status：* 叢集的目前狀態：Ready、Blocked、Error 或 Stale。
+* *阻塞問題：*叢集上的阻塞問題數。這些都是升級前必須解決的關鍵問題。
+* *存在風險：* 叢集上存在風險的發現數量。這些是在更新前檢查期間識別出的風險。
+* *警告：*叢集上的警告數量。更新前檢查已完成，但存在一些警告；您可以選擇修復這些警告或繼續更新。
+* *已跳過：*叢集上跳過的檢查數量。
+* *目標版本：* 使用者計畫升級到的 ONTAP 版本。（如果您只想對目前正在執行的版本進行健全狀況檢查，則可以與目前版本相同。）
+* *節點：* 叢集的節點，每個節點都顯示為節點名稱及其硬體型號（例如 eurbkpcla (FAS8200)）。
+* *報告：* 執行可用的報告格式：HTML、JSON、Excel、Log。
+* *上次執行：* 上次 Upgrade Health Checker 執行的日期和時間（以相對「X 天前」表示）。
+
+
+您可以選擇 *Reload* 來重新整理頁面。使用 *Search* 列來搜尋特定叢集的詳細資料。

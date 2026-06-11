@@ -1,0 +1,117 @@
+---
+sidebar: sidebar 
+permalink: setup-email-upgrade-health-checker.html 
+keywords: upgrade, health, checker 
+summary: 您可以設定電子郵件以接收 Upgrade Health Checker 報告。 
+---
+= 透過電子郵件接收升級健全狀況檢查程式報告
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以將電子郵件整合到 Upgrade Health Checker 中，以便在收件匣中接收報告。您可以透過 config.yaml 檔案或命令列參數啟用此功能。啟用後，Upgrade Health Checker 會使用 SMTP 伺服器將產生的報告（HTML、Excel 或 JSON 格式）傳送給一個或多個已設定的收件者。停用此功能後，將不會發送任何報告。如果報告產生失敗且已啟用電子郵件功能，則會將日誌檔案傳送給已設定的收件者。
+
+
+
+== 使用 config.yaml 檔案進行設定
+
+. 在 config.yaml 檔案中啟用電子郵件報告。
++
+[listing]
+----
+# Email Report Configuration
+EMAIL:
+  ENABLED: true
+----
+. 提供 SMTP 組態設定以及寄件者詳細資料和主旨：
++
+[listing]
+----
+# SMTP Server Configuration
+EMAIL:
+  ENABLED: true
+  FROM: "uhc-notify@example.com"
+  SUBJECT: "UHC Upgrade Health Report"
+  REPLY_TO: <email>
+  SMTP:
+    HOST: "smtp.example.com"
+    PORT: [<port-number>]
+----
+. 提供收件者電子郵件地址，並設定透過電子郵件傳送的報告格式，例如 HTML、EXCEL、JSON、ALL：
++
+[listing]
+----
+# Recipient Email Addresses, report formats
+EMAIL:
+  ENABLED: true
+  TO: <recipient>
+  FROM: "uhc-notify@example.com"
+  SUBJECT: "UHC Upgrade Health Report"
+  REPLY_TO: <email>
+  RECIPIENTS: "user1@example.com, user2@example.com"
+  REPORT_FORMATS: "HTML,EXCEL,JSON"   # valid values: HTML, EXCEL, JSON or ALL
+  SMTP:
+    HOST: "smtp.example.com"
+    PORT: [PORT]
+----
+
+
+
+
+== 使用命令列引數進行組態設定
+
+. 使用命令列引數啟用電子郵件報告：
++
+[listing]
+----
+./uhc --email-enabled=true
+----
+. 提供收件者電子郵件地址：
++
+[listing]
+----
+./uhc --email-recipients="user1@example.com, user2@example.com"
+----
+. 設定透過電子郵件傳送的報告格式，例如 HTML、EXCEL、JSON：
++
+[listing]
+----
+./uhc --email-report-formats=HTML,EXCEL,JSON
+----
+
+
+[NOTE]
+====
+以下三個屬性既可以透過命令列參數配置，也可以透過 config.yaml 檔案配置；其餘屬性只能在 config.yaml 檔案中配置：
+
+* 已啟用電子郵件
+* 電子郵件收件者
+* 電子郵件報告格式
+
+
+請注意，如果提供了命令列參數，則會覆寫 config.yaml 檔案的值。
+
+例如：
+
+[listing]
+----
+./uhc \
+  --email-enabled=true
+  --email-recipients="user1@example.com, user2@example.com" \
+  --email-report-formats=HTML,EXCEL,JSON \
+----
+[listing]
+----
+EMAIL:
+  FROM: "uhc-notify@example.com"
+  SUBJECT: "UHC Upgrade Health Report"
+  REPLY_TO: <email>
+  SMTP:
+    HOST: "smtp.example.com"
+    PORT: [PORT]
+----
+====

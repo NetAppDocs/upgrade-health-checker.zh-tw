@@ -1,5 +1,5 @@
 ---
-sidebar: sidebar 
+sidebar: sidebarU 
 permalink: whats-new.html 
 keywords: upgrade, health, checker, whats new, release, notes 
 summary: 了解此文件網站的最新內容。 
@@ -13,7 +13,39 @@ summary: 了解此文件網站的最新內容。
 
 
 [role="lead"]
-了解 Upgrade Health Checker 的新增功能。您可以透過導航至 link:https://console.netapp.com/automationHub["NetApp Console 自動化中心"^] 中的 Upgrade Health Checker 磁貼並查看最新的 Upgrade Health Checker 下載檔案，找到更多增強功能資訊。
+了解 Upgrade Health Checker（UHC）的新增功能。您可以透過導航至 link:https://console.netapp.com/automationHub["NetApp Console 自動化中心"^] 中的 Upgrade Health Checker 磁貼並查看最新的 Upgrade Health Checker 下載檔案，找到更多增強功能資訊。
+
+
+
+== 2026 年 6 月 11 日
+
+本次 Upgrade Health Checker 文件更新包含以下功能。
+
+* UHC 支援將報告直接傳送到您的收件匣。
++
+link:setup-email-upgrade-health-checker.html["透過電子郵件接收升級健全狀況檢查程式報告"]。
+
+* 引入了  `--dashboard` 參數，該參數可在  `<runs>/dashboard/index.html` 從現有執行中重新產生儀表板，而無需連接叢集。它提供了所有近期存取過的叢集健全狀況狀態的高階概觀。
++
+link:dashboard-upgrade-health-checker.html["升級 Health Checker 儀表板"], link:upgrade-health-checker-input-parameters.html#dashboard["儀表板參數"].
+
+* 推出全新的「維護」、「疑難排解」和「常見問題」章節。
++
+** 定期檢查更新、監控日誌中是否有任何重複出現的問題，並確保工具已針對您的環境正確配置，從而維護 Upgrade Health Checker。
++
+link:maintain-upgrade-health-checker.html["維護升級健全狀況檢查程式"]。
+
+** 疑難排解常見的升級健全狀況檢查程式問題，並解決可能阻礙 ONTAP 升級規劃的錯誤。
++
+link:troubleshoot-upgrade-health-checker.html["疑難排解升級健全狀況檢查程式"]。
+
+** Upgrade Health Checker 常見問題（FAQ）。
++
+link:faq-upgrade-health-checker.html["升級健全狀況檢查程式常見問題"]。
+
+
+
+
 
 
 

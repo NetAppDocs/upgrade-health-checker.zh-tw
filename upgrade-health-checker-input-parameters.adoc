@@ -300,6 +300,29 @@ CLUSTER:
 ====
 
 
+=== 儀表板
+
+ `--dashboard` 參數會從  `<runs>/dashboard/index.html` 的現有執行重新產生儀表板，而不需要聯絡叢集。您可以使用它在正常執行之外重新整理機群檢視。儀表板提供最近評估過的所有叢集健全狀況狀態的高階概觀，讓您能夠在單一位置輕鬆監控和比較多個叢集的升級整備程度。您可以在 Web 瀏覽器中開啟儀表板，以便快速檢視每個叢集的健全狀況狀態、潛在阻礙因素和風險。
+
+* CLI 參數： `--dashboard`
+
+
+.範例
+[%collapsible]
+====
+* CLI 參數：
++
+[listing]
+----
+./uhc --dashboard
+./uhc --dashboard --runs-path /custom/output
+./uhc --dashboard --config-path /path/to/custom_config.yaml
+----
+
+
+====
+
+
 === 停用遙測
 
 若要停用遙測功能，請將以下內容新增至您的  `config.yaml` 檔案：

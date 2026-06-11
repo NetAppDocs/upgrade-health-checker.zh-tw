@@ -95,6 +95,10 @@ Input Parameters Guide 還提供了有關指定自訂設定檔路徑和執行路
 
 NOTE: 程式的每次執行都是一次「獨立運行」，所有相關的資料、日誌和結果都將保存在相應的  `runs` 資料夾中。
 
+. 列出產生的報告檔案：
++
+`ls -lrt`
+
 . 在網頁瀏覽器、Microsoft Excel 或 JSON 檢視器中開啟報表檔案（名稱為 `uhc_<cluster-name>_<YYYYMMDDHHMMSS>`）以檢視報表。如果您在遠端主機上執行，請先將報表檔案下載到可以在網頁瀏覽器、Excel 或 JSON 檢視器中檢視報表的機器上。
 +
 日誌路徑和報告路徑如下：
@@ -107,3 +111,6 @@ NOTE: 程式的每次執行都是一次「獨立運行」，所有相關的資�
 
 
 
+
+.接下來
+產生升級計畫和叢集報告後、您可以檢視link:dashboard-upgrade-health-checker.html["升級 Health Checker 儀表板"]以取得執行期間評估之叢集健全狀況狀態的詳細資料。

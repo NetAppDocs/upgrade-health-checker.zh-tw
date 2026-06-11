@@ -21,15 +21,25 @@ sidebar:
       url: "/learn-about-upgrade-health-checker.html"
     - title: 設定 Upgrade Health Checker
       url: "/set-up-upgrade-health-checker.html"
+    - title: 升級健全狀況檢查程式的輸入參數
+      url: "/upgrade-health-checker-input-parameters.html"
   - title: 使用 Upgrade Health Checker
     entries:
     - title: 產生 ONTAP 升級報告
       url: "/generate-report-upgrade-health-checker.html"
+    - title: 升級 Health Checker 儀表板
+      url: "/dashboard-upgrade-health-checker.html"
     - title: 自動產生報告
       url: "/automate-report-upgrade-health-checker.html"
-  - title: 升級健全狀況檢查程式的輸入參數
-    url: "/upgrade-health-checker-input-parameters.html"
-  - title: 常見問題
-    url: "/faq-upgrade-health-checker.html"
+    - title: 設定透過電子郵件接收報告
+      url: "/setup-email-upgrade-health-checker.html"
+  - title: 維護、疑難排解、常見問題
+    entries:
+    - title: 維護
+      url: "/maintain-upgrade-health-checker.html"
+    - title: 疑難排解
+      url: "/troubleshoot-upgrade-health-checker.html"
+    - title: 常見問題
+      url: "/faq-upgrade-health-checker.html"
   - title: 法律聲明
     url: "/legal-notices.html"
