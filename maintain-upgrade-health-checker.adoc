@@ -17,6 +17,7 @@ summary: Upgrade Health Checker 的維護工作。
 
 
 
+[[tmp-space-management]]
 == /tmp 空間管理
 
 Upgrade Health Checker 會在執行過程中將其元件解壓縮到  `/tmp` 目錄中。如果您遇到  `/tmp` 空間不足的問題，請考慮以下幾點：
@@ -27,6 +28,7 @@ Upgrade Health Checker 會在執行過程中將其元件解壓縮到  `/tmp` 目
 
 
 
+[[run-directory-cleanup]]
 == 執行目錄清理
 
 Upgrade Health Checker 會為每次執行建立一個唯一的執行目錄，其中包含記錄和結果。若要管理磁碟空間、請設定自動清理程序、以便在一定時間（例如 30 天）後移除舊的執行目錄。
@@ -41,6 +43,7 @@ find /mnt/nfs/uhc/runs -type d -mtime +30 -exec rm -rf {} + 2>/dev/null
 ----
 
 
+[[automatic-updates]]
 == 自動更新
 
 Upgrade Health Checker 會在每次執行後，在網際網路連線可用時自動檢查更新。這可確保您擁有最新的功能、改進和錯誤修復。如果沒有網際網路存取，您可以從 link:https://console.netapp.com/automationHub["NetApp Console 自動化中心"^] 手動下載最新版本。

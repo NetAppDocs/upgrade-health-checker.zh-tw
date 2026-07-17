@@ -1,5 +1,5 @@
 ---
-sidebar: sidebarU 
+sidebar: sidebar 
 permalink: whats-new.html 
 keywords: upgrade, health, checker, whats new, release, notes 
 summary: 了解此文件網站的最新內容。 
@@ -17,9 +17,24 @@ summary: 了解此文件網站的最新內容。
 
 
 
+[[17-july-2026]]
+== 2026年7月17日
+
+本次更新新增多項增強功能，包括機群風險檢視儀表板、電子郵件驗證和加密支援、磁碟機計數報告、建議的 ONTAP 版本支援，以及 NAS 和 SAN IMT 檢查。
+
+* UHC 儀表板：*Fleet Risk* 檢視現已上線
+* 電子郵件整合：支援具有驗證和加密的電子郵件伺服器
+* 在報告的叢集摘要中新增了「磁碟機計數」
+* 建議的 ONTAP 版本現已支援
+* 新增對 NAS 和 SAN IMT 檢查的支援
+
+
+
+
+[[11-june-2026]]
 == 2026 年 6 月 11 日
 
-本次 Upgrade Health Checker 文件更新包含以下功能。
+本次更新新增報告的電子郵件傳送功能、用於快速健全狀況概覽的儀表板參數，以及新的文件章節，以協助您維護 Upgrade Health Checker 並進行疑難排解。
 
 * UHC 支援將報告直接傳送到您的收件匣。
 +
@@ -31,7 +46,7 @@ link:dashboard-upgrade-health-checker.html["升級 Health Checker 儀表板"], l
 
 * 推出全新的「維護」、「疑難排解」和「常見問題」章節。
 +
-** 定期檢查更新、監控日誌中是否有任何重複出現的問題，並確保工具已針對您的環境正確配置，從而維護 Upgrade Health Checker。
+** 透過檢查更新、監控日誌中是否有重複出現的問題，以及驗證您是否正確設定工具，來維護 Upgrade Health Checker。
 +
 link:maintain-upgrade-health-checker.html["維護升級健全狀況檢查程式"]。
 
@@ -49,11 +64,12 @@ link:faq-upgrade-health-checker.html["升級健全狀況檢查程式常見問題
 
 
 
+[[15-april-2026]]
 == 2026 年 4 月 15 日
 
-本次 Upgrade Health Checker 文件更新包含以下功能。
+本次更新新增了 XLSX 報告格式，需要存取新的端點才能實現自動更新。
 
-* UHC 需要存取新的端點 (+https://api.activeiq.netapp.com+) 才能使自動更新功能正常運作。
+* 您必須授予 UHC 對新端點（+https://api.activeiq.netapp.com+）的存取，才能讓自動更新功能正常運作。
 +
 link:set-up-upgrade-health-checker.html["下載並設定 Upgrade Health Checker"]。
 
@@ -68,8 +84,9 @@ link:automate-report-upgrade-health-checker.html["使用 Upgrade Health Checker 
 
 
 
+[[13-february-2026]]
 == 2026 年 2 月 13 日
 
-Upgrade Health Checker 提供了一種全新的解決方案，可產生全面的現場報告，幫助您成功完成 ONTAP 升級。它可以與現有的自動化和編排框架配合使用，從而在升級單一或多個叢集時提高效率。Upgrade Health Checker 支援升級到 ONTAP 9.11.1 及更高版本。
+Upgrade Health Checker 現已推出。此工具可產生詳細的現場報告，協助您成功完成 ONTAP 升級。您可以將 Upgrade Health Checker 與現有的自動化和協調框架結合使用，從而在升級單一或多個叢集時節省時間。Upgrade Health Checker 支援升級至 ONTAP 9.11.1 及更新版本。
 
 link:learn-about-upgrade-health-checker.html["深入瞭解 Upgrade Health Checker"]。

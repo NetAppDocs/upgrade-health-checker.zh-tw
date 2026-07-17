@@ -17,12 +17,14 @@ summary: 疑難排解升級健全狀況檢查程式：ONTAP 升級的常見問�
 
 
 
+[[troubleshoot-issues]]
 == 疑難排解問題
 
 {empty} + {empty}
 
 
 
+[[issue-authentication-or-credential-errors]]
 === 問題：驗證或認證錯誤
 
 *症狀：*
@@ -50,6 +52,7 @@ Missing cluster credentials
 
 
 
+[[issue-auto-update-fails]]
 === 問題：自動更新失敗
 
 *症狀：*
@@ -81,6 +84,7 @@ df -h <location of uhc>
 
 
 
+[[issue-binary-takes-a-long-time-to-start]]
 === 問題：二進位檔案啟動時間過長
 
 *原因：* 該二進位檔案是自包含的，需要在執行前解壓縮自身。
@@ -89,6 +93,7 @@ df -h <location of uhc>
 
 
 
+[[issue-permission-denied-or-cannot-execute-binary-on-tmp]]
 === 問題：/tmp 上出現「權限被拒絕」或「無法執行二進位檔案」
 
 *症狀：*
@@ -139,6 +144,7 @@ NOTE: 若要使此變通方法生效，自訂路徑必須先存在。如果該�
 
 
 
+[[issue-connection-timeout]]
 === 問題：連線逾時
 
 *症狀：*
@@ -157,6 +163,7 @@ Request timeout
 
 
 
+[[issue-insufficient-disk-space]]
 === 問題：磁碟空間不足
 
 *症狀：*
@@ -196,6 +203,7 @@ rm -rf /tmp/_MEI*
 
 
 
+[[issue-invalid-runs-path]]
 === 問題：執行路徑無效
 
 *症狀：*
@@ -215,6 +223,7 @@ Cannot create tarball: basepath_runs '<path>' does not exist
 
 
 
+[[issue-invalid-target-ontap-version]]
 === 問題：目標 ONTAP 版本無效
 
 *症狀：*
@@ -234,6 +243,7 @@ Downgrade is not supported. Target version must be greater than or equal to the 
 
 
 
+[[issue-signature-verification-fails]]
 === 問題：簽名驗證失敗
 
 *症狀：*
@@ -261,6 +271,7 @@ openssl dgst -sha256 -verify UHC-Linux-public.pub -signature uhc.sig uhc
 
 
 
+[[issue-telemetry-upload-failure]]
 === 問題：遙測上傳失敗
 
 *症狀：*
@@ -283,6 +294,7 @@ Telemetry endpoint is not reachable
 
 
 
+[[issue-update-in-progress-lock-file]]
 === 問題：「UPDATE IN PROGRESS」鎖定檔案
 
 *症狀：*

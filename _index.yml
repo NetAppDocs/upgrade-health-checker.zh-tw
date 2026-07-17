@@ -17,8 +17,12 @@ indexpage:
     links:
     - title: 產生 ONTAP 升級報告
       url: generate-report-upgrade-health-checker.html
+    - title: 升級 Health Checker 儀表板
+      url: dashboard-upgrade-health-checker.html
     - title: 自動產生報告
       url: automate-report-upgrade-health-checker.html
+    - title: 透過電子郵件接收報告
+      url: setup-email-upgrade-health-checker.html
   - title: 更多資源
     links:
     - title: 使用 NetApp Lab on Demand 開始使用 Upgrade Health Checker

@@ -191,7 +191,6 @@
   <block id="daad4dadeda8cd86f01c8ad7f2a30465" category="summary">了解此文件網站的最新內容。</block>
   <block id="a8324b80938b67ec782deb0221494038" category="doc">Upgrade Health Checker 新增功能</block>
   <block id="984ed907e956f5ada3f813bd4a802fd2" category="inline-link-macro">NetApp Console 自動化中心</block>
-  <block id="ae47874d4e80f14ff840114a5af1558e" category="paragraph">Upgrade Health Checker 提供了一種全新的解決方案，可產生全面的現場報告，幫助您成功完成 ONTAP 升級。它可以與現有的自動化和編排框架配合使用，從而在升級單一或多個叢集時提高效率。Upgrade Health Checker 支援升級到 ONTAP 9.11.1 及更高版本。</block>
   <block id="ba6d627457ce6f12fac3776c3f84b9f5" category="inline-link-macro">深入瞭解 Upgrade Health Checker</block>
   <block id="c2da3472d13132f746797e82ab607214" category="paragraph"><block ref="311172ef496e6974c00a808505e30585" category="inline-link-macro-rx"></block>。</block>
   <block id="6e777a6e34571fc72776d25b82dfacec" category="sidebar">Upgrade Health Checker 會執行全面的健全狀況檢查，以協助您規劃並執行成功的 ONTAP 升級。</block>
@@ -220,7 +219,6 @@
   <block id="82e19305023b5eb3613e715db77f833c" category="list-text">JSON 報表路徑：<block ref="fa32c5a3f7d651976fb4d5ab4d04b0b0" prefix=" " category="inline-code"></block></block>
   <block id="c9222608750e8dc2e14567da95cc5574" category="list-text">在網頁瀏覽器、Microsoft Excel 或 JSON 檢視器中開啟報表檔案（名稱為<block ref="781e82a34e84af3b11fccec6b813c654" prefix=" " category="inline-code"></block>）以檢視報表。如果您在遠端主機上執行，請先將報表檔案下載到可以在網頁瀏覽器、Excel 或 JSON 檢視器中檢視報表的機器上。</block>
   <block id="ef442759af12bb34136648bc4519a80c" category="section-title">2026 年 4 月 15 日</block>
-  <block id="46f2cb9a84a7af28bc6cd48700cc9900" category="paragraph">本次 Upgrade Health Checker 文件更新包含以下功能。</block>
   <block id="e1a2132b8b37788de7f02a2417b9fb84" category="paragraph"><block ref="818545cfdb8752d4fd7459b5cbb30ef7" category="inline-link-macro-rx"></block>。</block>
   <block id="b729a38666412b046926504f8c6e0c22" category="list-text">UHC 現在提供了一種新的報告格式（.XLSX - 人類可編輯），作為 HTML（人類可讀）和 JSON（機器可讀）格式的補充。</block>
   <block id="28644c8986780297cc12f67e6e53c6e9" category="paragraph"><block ref="6489edbb98d22789fa797cea6950f9bd" category="inline-link-macro-rx"></block>。</block>
@@ -228,7 +226,6 @@
   <block id="14bcc4201c40840cb4def541b49a3f32" category="sidebar">使用 NetApp Lab on Demand 開始使用 Upgrade Health Checker</block>
   <block id="9878135fc061d82ca23d024a73b70f17" category="list-text">透過 HTTPS 連接到遙測端點（+https://support.netapp.com/+ 和 +https://api.activeiq.netapp.com+）</block>
   <block id="8e902ec9dc6816d99e16bdee4a2eed46" category="list-text">透過 HTTPS（443）連線到自動更新端點（+https://api.uhc.netapp.com+、+https://gql.aiq.netapp.com+ 和 +https://api.activeiq.netapp.com+）</block>
-  <block id="7da7d55bf35c61004edeb6d3b68a9970" category="list-text">UHC 需要存取新的端點 (+https://api.activeiq.netapp.com+) 才能使自動更新功能正常運作。</block>
   <block id="fb87b83f5a1f10d68c8aae574e593e92" category="list-text">建立 cron 排程的自動化指令碼以執行 Upgrade Health Checker。以下範例指令碼可針對多個叢集執行 Upgrade Health Checker。二進位檔案和 config.yaml 檔案已安裝至 /opt/uhc/tool/。</block>
   <block id="896d9c07e1c3a1231ece824cc9567062" category="list-text">設定 cron 工作，讓 script 在週一至週五凌晨 4:00 執行：</block>
   <block id="ace9e20908f5ac61a1cd07a6d3d60c0f" category="admonition">若要持續監控健康狀況，請使用 <block ref="bfb43d575663966ac38a26eb4b47410c" prefix=" " category="inline-code"></block> 而不需指定特定的升級目標。</block>
@@ -296,20 +293,15 @@
   <block id="075d48f32d1c61c7bc401a6884f7cf92" category="list-text"><block ref="075d48f32d1c61c7bc401a6884f7cf92" category="inline-link-macro-rx"></block></block>
   <block id="2bc7aac0df718ec4b8d51eacce3de379" category="summary">您可以設定電子郵件以接收 Upgrade Health Checker 報告。</block>
   <block id="403a25a6039c0e1bf716eb5582433b74" category="doc">透過電子郵件接收升級健全狀況檢查程式報告</block>
-  <block id="860efc9b661f4d41df0b3275d4a01f9e" category="paragraph">您可以將電子郵件整合到 Upgrade Health Checker 中，以便在收件匣中接收報告。您可以透過 config.yaml 檔案或命令列參數啟用此功能。啟用後，Upgrade Health Checker 會使用 SMTP 伺服器將產生的報告（HTML、Excel 或 JSON 格式）傳送給一個或多個已設定的收件者。停用此功能後，將不會發送任何報告。如果報告產生失敗且已啟用電子郵件功能，則會將日誌檔案傳送給已設定的收件者。</block>
   <block id="e152f7a0987cd387b3f0af29e5da3550" category="section-title">使用 config.yaml 檔案進行設定</block>
   <block id="7b717dfd9ad1ff92fe9062d96808c202" category="list-text">在 config.yaml 檔案中啟用電子郵件報告。</block>
-  <block id="a5506b391e227dfd4ee5fcf46a44f411" category="list-text">提供 SMTP 組態設定以及寄件者詳細資料和主旨：</block>
-  <block id="dc0335c87191d92d81fca87bdb3e9a6d" category="list-text">提供收件者電子郵件地址，並設定透過電子郵件傳送的報告格式，例如 HTML、EXCEL、JSON、ALL：</block>
   <block id="becf91e5465bdb37d46d763d4aab426c" category="section-title">使用命令列引數進行組態設定</block>
   <block id="479f67ea57ff0730833a90e8cb344675" category="list-text">使用命令列引數啟用電子郵件報告：</block>
   <block id="86687a26ed58885822822c492bb525c6" category="list-text">提供收件者電子郵件地址：</block>
   <block id="50473cade6ce5b072ef594d97e30f293" category="list-text">設定透過電子郵件傳送的報告格式，例如 HTML、EXCEL、JSON：</block>
-  <block id="6cde847387b92f199ce8915b3692ac37" category="paragraph">以下三個屬性既可以透過命令列參數配置，也可以透過 config.yaml 檔案配置；其餘屬性只能在 config.yaml 檔案中配置：</block>
   <block id="02d162bc011d2df35f8cd6f906d7d60a" category="list-text">已啟用電子郵件</block>
   <block id="f46e85a0de52240f550f9daab9d6086c" category="list-text">電子郵件收件者</block>
   <block id="ea263adf46b6d5e874d790afd83f0987" category="list-text">電子郵件報告格式</block>
-  <block id="2b6bf35359882281e9a439e9cfcdfd7a" category="paragraph">請注意，如果提供了命令列參數，則會覆寫 config.yaml 檔案的值。</block>
   <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">例如：</block>
   <block id="1cc4274eac4a90919037379ad302ee24" category="summary">疑難排解升級健全狀況檢查程式：ONTAP 升級的常見問題、錯誤和解決方案。</block>
   <block id="33fc1d20f1d2e7e8d9ea39cc1c1e260b" category="doc">疑難排解升級健全狀況檢查程式</block>
@@ -379,7 +371,6 @@
   <block id="e06741797ed1dc0a966f53071a491401" category="inline-link-macro">儀表板參數</block>
   <block id="2db3ba2e9c7b7806153c255359ca61d2" category="paragraph"><block ref="cb5987a19cc29bdff093adf9e3c49ecc" category="inline-link-macro-rx"></block>, <block ref="742c6b812eaf7871aa5cdafc51efea43" category="inline-link-macro-rx"></block>.</block>
   <block id="b8625ecfb276c9ebf1ede5fca0088ca8" category="list-text">推出全新的「維護」、「疑難排解」和「常見問題」章節。</block>
-  <block id="1ab8a927937778a6689a579c30b0ccaa" category="list-text">定期檢查更新、監控日誌中是否有任何重複出現的問題，並確保工具已針對您的環境正確配置，從而維護 Upgrade Health Checker。</block>
   <block id="dee801512c32b9a598a47b86ba488f76" category="paragraph"><block ref="4e186b263c1e6fa5ae08ef69bdaf2995" category="inline-link-macro-rx"></block>。</block>
   <block id="f12f1c86955a028fd35ab9eaff2150a3" category="list-text">疑難排解常見的升級健全狀況檢查程式問題，並解決可能阻礙 ONTAP 升級規劃的錯誤。</block>
   <block id="baa81debda1c4b19727722cd64a108d4" category="paragraph"><block ref="3597fe8c8063c1708eb12f618dae69b7" category="inline-link-macro-rx"></block>。</block>
@@ -388,4 +379,24 @@
   <block id="0ff45cc75d0cd4d181c04f8f358944c3" category="sidebar">維護、疑難排解、常見問題</block>
   <block id="ade01a5a398372194a42c36e9f5279ac" category="sidebar">維護</block>
   <block id="d60c463bb4096f3ed4bd1618626dfe10" category="sidebar">疑難排解</block>
+  <block id="b8587c4f26b562a2289d2c3ebc1490cd" category="paragraph">Upgrade Health Checker 可以將報告直接傳送至您的收件匣。您可以透過 config.yaml 檔案或命令列參數啟用此功能。啟用後，Upgrade Health Checker 會將產生的報告（HTML、Excel 或 JSON 格式）透過 SMTP 伺服器傳送給一個或多個收件者。停用此功能後，將不會傳送任何報告。如果報告產生失敗且已啟用電子郵件功能，Upgrade Health Checker 會將日誌檔案透過電子郵件傳送給已設定的收件者。</block>
+  <block id="8e02ede1d03aac90f92cc176cace3e9c" category="paragraph">您可以透過在 config.yaml 檔案中啟用電子郵件報告、新增 SMTP 伺服器詳細資訊以及指定收件者位址和報告格式來設定電子郵件設定。</block>
+  <block id="c27f5ad22c5694f3bdac1429bc3dbc35" category="list-text">新增 SMTP 組態設定、寄件者詳細資料和主旨：</block>
+  <block id="3580e74e397e00dc281bbd9214fb9056" category="list-text">新增收件者電子郵件地址，並設定系統透過電子郵件傳送的報告格式，例如 HTML、EXCEL、JSON 或全部。您也可以使用驗證和加密：</block>
+  <block id="2a91e94a72840e7924d016578fbad286" category="paragraph">您可以使用命令列引數設定基本電子郵件設定，以啟用報告、指定收件者及選擇報告格式。</block>
+  <block id="5a218b91f6158f83ff408c235c22608f" category="paragraph">您可以使用命令列參數或 config.yaml 檔案設定以下三個屬性。其餘所有屬性只能在 config.yaml 檔案中設定：</block>
+  <block id="3765a0a9e71fcf0695d585798c0f7818" category="paragraph">請注意，命令列參數會置換 config.yaml 檔案的值。</block>
+  <block id="a6be72313a95cd7c51d73821a3ec4a39" category="section-title">2026年7月17日</block>
+  <block id="a1b9ebd6f0a705373bb04a1ef3e3e5a1" category="paragraph">本次更新新增多項增強功能，包括機群風險檢視儀表板、電子郵件驗證和加密支援、磁碟機計數報告、建議的 ONTAP 版本支援，以及 NAS 和 SAN IMT 檢查。</block>
+  <block id="eb794a02fa8d9355140be4e8462e5f4f" category="list-text">UHC 儀表板：*Fleet Risk* 檢視現已上線</block>
+  <block id="69161900749195d35aba8ae3dd1b86e9" category="list-text">電子郵件整合：支援具有驗證和加密的電子郵件伺服器</block>
+  <block id="765efeade5c6287182e507f2e42e0c17" category="list-text">在報告的叢集摘要中新增了「磁碟機計數」</block>
+  <block id="b3c16c4644ccd43c0fa7a23462d7f33c" category="list-text">建議的 ONTAP 版本現已支援</block>
+  <block id="3d845cec7f7e3420d8ce5c903cf124e5" category="list-text">新增對 NAS 和 SAN IMT 檢查的支援</block>
+  <block id="8aab03955bf2c1214a6ad2ee0f63546a" category="paragraph">本次更新新增報告的電子郵件傳送功能、用於快速健全狀況概覽的儀表板參數，以及新的文件章節，以協助您維護 Upgrade Health Checker 並進行疑難排解。</block>
+  <block id="7d9c60c63b935ef67858fee9c59b31ce" category="list-text">透過檢查更新、監控日誌中是否有重複出現的問題，以及驗證您是否正確設定工具，來維護 Upgrade Health Checker。</block>
+  <block id="f59b071ecb8fe980b0730a8d2ba9bd0c" category="paragraph">本次更新新增了 XLSX 報告格式，需要存取新的端點才能實現自動更新。</block>
+  <block id="8a4e5ac1aa6e6074a0de130e95d9919d" category="list-text">您必須授予 UHC 對新端點（+https://api.activeiq.netapp.com+）的存取，才能讓自動更新功能正常運作。</block>
+  <block id="a272a47b723d2038be71ba15d270606e" category="paragraph">Upgrade Health Checker 現已推出。此工具可產生詳細的現場報告，協助您成功完成 ONTAP 升級。您可以將 Upgrade Health Checker 與現有的自動化和協調框架結合使用，從而在升級單一或多個叢集時節省時間。Upgrade Health Checker 支援升級至 ONTAP 9.11.1 及更新版本。</block>
+  <block id="742eb09495234f505b1ad9d7813d30e7" category="sidebar">透過電子郵件接收報告</block>
 </blocks>
