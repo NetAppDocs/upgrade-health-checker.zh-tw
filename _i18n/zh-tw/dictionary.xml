@@ -388,15 +388,15 @@
   <block id="3765a0a9e71fcf0695d585798c0f7818" category="paragraph">請注意，命令列參數會置換 config.yaml 檔案的值。</block>
   <block id="a6be72313a95cd7c51d73821a3ec4a39" category="section-title">2026年7月17日</block>
   <block id="a1b9ebd6f0a705373bb04a1ef3e3e5a1" category="paragraph">本次更新新增多項增強功能，包括機群風險檢視儀表板、電子郵件驗證和加密支援、磁碟機計數報告、建議的 ONTAP 版本支援，以及 NAS 和 SAN IMT 檢查。</block>
-  <block id="eb794a02fa8d9355140be4e8462e5f4f" category="list-text">UHC 儀表板：*Fleet Risk* 檢視現已上線</block>
-  <block id="69161900749195d35aba8ae3dd1b86e9" category="list-text">電子郵件整合：支援具有驗證和加密的電子郵件伺服器</block>
-  <block id="765efeade5c6287182e507f2e42e0c17" category="list-text">在報告的叢集摘要中新增了「磁碟機計數」</block>
-  <block id="b3c16c4644ccd43c0fa7a23462d7f33c" category="list-text">建議的 ONTAP 版本現已支援</block>
-  <block id="3d845cec7f7e3420d8ce5c903cf124e5" category="list-text">新增對 NAS 和 SAN IMT 檢查的支援</block>
   <block id="8aab03955bf2c1214a6ad2ee0f63546a" category="paragraph">本次更新新增報告的電子郵件傳送功能、用於快速健全狀況概覽的儀表板參數，以及新的文件章節，以協助您維護 Upgrade Health Checker 並進行疑難排解。</block>
   <block id="7d9c60c63b935ef67858fee9c59b31ce" category="list-text">透過檢查更新、監控日誌中是否有重複出現的問題，以及驗證您是否正確設定工具，來維護 Upgrade Health Checker。</block>
   <block id="f59b071ecb8fe980b0730a8d2ba9bd0c" category="paragraph">本次更新新增了 XLSX 報告格式，需要存取新的端點才能實現自動更新。</block>
   <block id="8a4e5ac1aa6e6074a0de130e95d9919d" category="list-text">您必須授予 UHC 對新端點（+https://api.activeiq.netapp.com+）的存取，才能讓自動更新功能正常運作。</block>
   <block id="a272a47b723d2038be71ba15d270606e" category="paragraph">Upgrade Health Checker 現已推出。此工具可產生詳細的現場報告，協助您成功完成 ONTAP 升級。您可以將 Upgrade Health Checker 與現有的自動化和協調框架結合使用，從而在升級單一或多個叢集時節省時間。Upgrade Health Checker 支援升級至 ONTAP 9.11.1 及更新版本。</block>
   <block id="742eb09495234f505b1ad9d7813d30e7" category="sidebar">透過電子郵件接收報告</block>
+  <block id="2e511792df0fe560a279011a4550ebaf" category="list-text">提供具有驗證和加密的電子郵件伺服器的支援。</block>
+  <block id="e6b6c01fe88f4c529278342034609f7c" category="list-text">新增 Fleet Risk 檢視儀表板，可對您的整個資產進行風險排名。現在，您可以查看哪些封鎖的叢集風險最高。這可讓您優先處理修復作業。</block>
+  <block id="856fc3b929c90b3c81bd17984abe77cd" category="list-text">叢集報告現在包含磁碟機數量，以及 ONTAP 版本、節點數量和容量。至此，硬體快照已完成，可用於升級和容量規劃。</block>
+  <block id="eed66fd70ff3d1349ac990af700a5a10" category="list-text">UHC 評估現在包括建議的升級目標 ONTAP 版本。</block>
+  <block id="70f1990f138a67936a4113eceb3a2154" category="list-text">增加了對 NAS 和 SAN IMT 檢查的支援。</block>
 </blocks>
