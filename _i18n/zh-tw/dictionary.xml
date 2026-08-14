@@ -399,4 +399,6 @@
   <block id="856fc3b929c90b3c81bd17984abe77cd" category="list-text">叢集報告現在包含磁碟機數量，以及 ONTAP 版本、節點數量和容量。至此，硬體快照已完成，可用於升級和容量規劃。</block>
   <block id="eed66fd70ff3d1349ac990af700a5a10" category="list-text">UHC 評估現在包括建議的升級目標 ONTAP 版本。</block>
   <block id="70f1990f138a67936a4113eceb3a2154" category="list-text">增加了對 NAS 和 SAN IMT 檢查的支援。</block>
+  <block id="01b8b50c6af6a26d04385207f4b3c02e" category="section-title">2026年8月13日</block>
+  <block id="03276a80a231fea1196fc4e6e3ab6682" category="paragraph">此次更新增強了對 SAN 和 NAS ONTAP 叢集的互通性檢查，並修復了一些現有問題。</block>
 </blocks>
