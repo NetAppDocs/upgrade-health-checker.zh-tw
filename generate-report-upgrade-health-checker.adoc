@@ -4,7 +4,7 @@ permalink: generate-report-upgrade-health-checker.html
 keywords: upgrade, health, checker, report 
 summary: 您可以使用 Upgrade Health Checker 為單一或多個 ONTAP 叢集產生升級計畫。 
 ---
-= 使用 Upgrade Health Checker 產生升級計劃
+= 使用 Upgrade Health Checker 產生升級計畫
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

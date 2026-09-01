@@ -22,7 +22,6 @@
   <block id="3880fea319e437eea669686be6861626" category="paragraph">您不需要網際網路連線即可執行 Upgrade Health Checker。它會使用您的 ONTAP 叢集目前的組態資料在現場產生升級計劃和報告。</block>
   <block id="982d129000c1d3e533f5e8593c670b3d" category="section-title">Upgrade Health Checker 支援哪些 ONTAP 版本？</block>
   <block id="b7c89596c79e950e74638e5d75919aee" category="summary">您可以使用 Upgrade Health Checker 為單一或多個 ONTAP 叢集產生升級計畫。</block>
-  <block id="a46b239b0ed00e39f2903761716caf03" category="doc">使用 Upgrade Health Checker 產生升級計劃</block>
   <block id="e170a21083188ebc6e00ef17f5167dd7" category="inline-link-macro">自動產生升級報告</block>
   <block id="7b29ddbb31d8dbabbb6926d591661d76" category="paragraph">如果您擁有一個包含多個叢集的大型複雜環境，您還可以 <block ref="c8a25bc0c3f7d35cbdee90d212a324b8" category="inline-link-macro-rx"></block> 協助維護最新的升級計畫。</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">開始之前</block>
@@ -401,4 +400,6 @@
   <block id="70f1990f138a67936a4113eceb3a2154" category="list-text">增加了對 NAS 和 SAN IMT 檢查的支援。</block>
   <block id="01b8b50c6af6a26d04385207f4b3c02e" category="section-title">2026年8月13日</block>
   <block id="03276a80a231fea1196fc4e6e3ab6682" category="paragraph">此次更新增強了對 SAN 和 NAS ONTAP 叢集的互通性檢查，並修復了一些現有問題。</block>
+  <block id="13fcda6342963d7d59aa8e893c2fe5c0" category="doc">使用 Upgrade Health Checker 產生升級計畫</block>
+  <block id="d37632fbc2f0f1b27ade5808d2dec434" category="doc">Upgrade Health Checker 的法律聲明</block>
 </blocks>

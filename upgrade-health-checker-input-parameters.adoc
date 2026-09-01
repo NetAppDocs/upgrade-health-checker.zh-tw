@@ -4,7 +4,7 @@ permalink: upgrade-health-checker-input-parameters.html
 keywords: upgrade, health, checker, input, parameter 
 summary: 您可以深入瞭解 Upgrade Health Checker 的輸入參數，以協助您為 ONTAP 叢集產生升級報告。 
 ---
-= 了解 Upgrade Health Checker 的輸入參數
+= 升級健全狀況檢查程式的輸入參數
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
