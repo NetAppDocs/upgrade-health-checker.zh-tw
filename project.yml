@@ -1,5 +1,5 @@
 ---
-jekyll: filters-gpt5
+jekyll: serp-header
 settings:
   name: Upgrade Health Checker
   internal:
