@@ -282,10 +282,8 @@
   <block id="176c0fe1d322d9a51e31204aad32eae6" category="paragraph">*ONTAP 版本*</block>
   <block id="92545160fc537c4d5544686c4bcdf2e5" category="cell">執行 ONTAP 9.11.1 或更新版本的叢集</block>
   <block id="71158affd0036fb2466b1fb9e9ae37b4" category="paragraph">*託管需求*</block>
-  <block id="fffb00fef85cf67efb62289a6532ecf2" category="cell">將 VM 放置在具有叢集連線和網際網路存取的位置，以便實現工具的自動更新。此機器應可透過 HTTPS（443）存取以下端點，以執行自動更新並讓 NetApp 接收有關升級計畫的 AutoSupport 資訊：<block ref="b6fcb4b13f321b8cb388d57eb2e860ab" category="inline-link-rx"></block> <block ref="072b499eacb5befcbdab2d6cc0fe02a0" category="inline-link-rx"></block> <block ref="53fb0fc7c544c164b74ed43fbccd4384" category="inline-link-rx"></block> <block ref="1e149c7d9ce6dc9e42acefe98045ece8" category="inline-link-rx"></block></block>
   <block id="6416dbbf5267211166cfea2ed336e59e" category="paragraph">*建議套件*</block>
   <block id="38f5250c3529fb3f11c0374bdaf9aeaa" category="cell">安裝 Web 伺服器以方便存取</block>
-  <block id="6063847442b88d203c59c2c6de6f2e53" category="admonition">請確保虛擬機器可以透過 HTTPS（443）連接到自動更新和遙測端點<block ref="dff1129755a63688cdc5de28dfe608ad" category="inline-link-rx"></block>和<block ref="b6e65db6bdd125b2fca849ddf715a294" category="inline-link-rx"></block>，以便 NetApp 接收有關升級計劃的 AutoSupport 資訊。如果無法存取網際網路，則必須手動下載最新版本的 Upgrade Health Checker。</block>
   <block id="fd2112d1826143e744670603b8189778" category="list-text">瀏覽至<block ref="40053797cfb8864b5eaa5f1f6f7991c2" category="inline-link-macro-rx"></block>並找到 Upgrade Health Checker 磚，以下載 Upgrade Health Checker 二進位檔。</block>
   <block id="0028a1b2c66adc5ceda52b78a1cdb74d" category="paragraph">您必須為 HTTP 應用程式建立服務帳戶。請使用以下 CLI 指令設定必要的權限：</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="list-title">相關資訊</block>
@@ -402,4 +400,6 @@
   <block id="03276a80a231fea1196fc4e6e3ab6682" category="paragraph">此次更新增強了對 SAN 和 NAS ONTAP 叢集的互通性檢查，並修復了一些現有問題。</block>
   <block id="13fcda6342963d7d59aa8e893c2fe5c0" category="doc">使用 Upgrade Health Checker 產生升級計畫</block>
   <block id="d37632fbc2f0f1b27ade5808d2dec434" category="doc">Upgrade Health Checker 的法律聲明</block>
+  <block id="58ce19f9d14bbf36c99916598d07b7c7" category="cell">將虛擬機器放置在具有叢集連線和網際網路存取的位置，以便自動更新工具。此機器應可透過 HTTPS （443） 存取下列端點，以執行自動更新，並讓 NetApp 接收有關您升級計畫的 AutoSupport 資訊： \https://support.netapp.com/ \https://api.uhc.netapp.com \https://gql.aiq.netapp.com \https://api.activeiq.netapp.com</block>
+  <block id="f8dfac59d1fb625ac9d81d11aafbcd07" category="admonition">請確保虛擬機器可以透過 HTTPS（443）連線至自動更新與遙測端點（\https://support.netapp.com/ 與 \https://api.activeiq.netapp.com），以便 NetApp 接收有關您升級計畫的 AutoSupport 資訊。如果無法存取網際網路，您必須手動下載最新版本的 Upgrade Health Checker。</block>
 </blocks>
