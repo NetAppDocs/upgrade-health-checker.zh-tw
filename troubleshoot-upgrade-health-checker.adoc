@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: troubleshoot-upgrade-health-checker.html 
 keywords: upgrade, health, checker, troubleshoot, issues, errors, ontap 
-summary: 疑難排解升級健全狀況檢查程式：ONTAP 升級的常見問題、錯誤和解決方案。 
+summary: 透過檢閱 ONTAP 升級的常見問題、錯誤和解決方案，對 Upgrade Health Checker 進行疑難排解。 
 ---
 = 疑難排解升級健全狀況檢查程式
 :hardbreaks:

@@ -300,7 +300,6 @@
   <block id="f46e85a0de52240f550f9daab9d6086c" category="list-text">電子郵件收件者</block>
   <block id="ea263adf46b6d5e874d790afd83f0987" category="list-text">電子郵件報告格式</block>
   <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">例如：</block>
-  <block id="1cc4274eac4a90919037379ad302ee24" category="summary">疑難排解升級健全狀況檢查程式：ONTAP 升級的常見問題、錯誤和解決方案。</block>
   <block id="33fc1d20f1d2e7e8d9ea39cc1c1e260b" category="doc">疑難排解升級健全狀況檢查程式</block>
   <block id="8bbf781921fc79273f7113760a28cdce" category="paragraph">了解如何疑難排解常見的 Upgrade Health Checker 問題，並解決可能阻止 ONTAP 升級規劃的錯誤。</block>
   <block id="7a4e5e5bc542eae2d10e3506f839f2ae" category="section-title">疑難排解問題</block>
@@ -402,4 +401,5 @@
   <block id="d37632fbc2f0f1b27ade5808d2dec434" category="doc">Upgrade Health Checker 的法律聲明</block>
   <block id="58ce19f9d14bbf36c99916598d07b7c7" category="cell">將虛擬機器放置在具有叢集連線和網際網路存取的位置，以便自動更新工具。此機器應可透過 HTTPS （443） 存取下列端點，以執行自動更新，並讓 NetApp 接收有關您升級計畫的 AutoSupport 資訊： \https://support.netapp.com/ \https://api.uhc.netapp.com \https://gql.aiq.netapp.com \https://api.activeiq.netapp.com</block>
   <block id="f8dfac59d1fb625ac9d81d11aafbcd07" category="admonition">請確保虛擬機器可以透過 HTTPS（443）連線至自動更新與遙測端點（\https://support.netapp.com/ 與 \https://api.activeiq.netapp.com），以便 NetApp 接收有關您升級計畫的 AutoSupport 資訊。如果無法存取網際網路，您必須手動下載最新版本的 Upgrade Health Checker。</block>
+  <block id="7b109a0da4b947e1ef4b1af915317559" category="summary">透過檢閱 ONTAP 升級的常見問題、錯誤和解決方案，對 Upgrade Health Checker 進行疑難排解。</block>
 </blocks>
