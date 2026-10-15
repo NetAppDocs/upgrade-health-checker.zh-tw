@@ -402,4 +402,10 @@
   <block id="58ce19f9d14bbf36c99916598d07b7c7" category="cell">將虛擬機器放置在具有叢集連線和網際網路存取的位置，以便自動更新工具。此機器應可透過 HTTPS （443） 存取下列端點，以執行自動更新，並讓 NetApp 接收有關您升級計畫的 AutoSupport 資訊： \https://support.netapp.com/ \https://api.uhc.netapp.com \https://gql.aiq.netapp.com \https://api.activeiq.netapp.com</block>
   <block id="f8dfac59d1fb625ac9d81d11aafbcd07" category="admonition">請確保虛擬機器可以透過 HTTPS（443）連線至自動更新與遙測端點（\https://support.netapp.com/ 與 \https://api.activeiq.netapp.com），以便 NetApp 接收有關您升級計畫的 AutoSupport 資訊。如果無法存取網際網路，您必須手動下載最新版本的 Upgrade Health Checker。</block>
   <block id="7b109a0da4b947e1ef4b1af915317559" category="summary">透過檢閱 ONTAP 升級的常見問題、錯誤和解決方案，對 Upgrade Health Checker 進行疑難排解。</block>
+  <block id="f633c86b0317ff4aa3fa992245e2b77a" category="section-title">2026 年 10 月 15 日</block>
+  <block id="273251dcc234403d19bf0e1b8a9c54c2" category="paragraph">本次更新對目標版本風險評估、報告詳情、建議的 ONTAP 版本選擇和韌體建議進行了多項改進。</block>
+  <block id="e8f602fbb5275e969de02c4ff90239cc" category="list-text">UHC 評估現在根據目標版本評估 ONTAP 的風險。</block>
+  <block id="3c352be1f1f9a774d8de0a66650f2a00" category="list-text">報告現在包含 CVE ID、CVSS 評分和建議的修復版本。</block>
+  <block id="fe6994d091ee557d1bc609b9f347f0e5" category="list-text">UHC 現在支援使用 <block ref="1bd361f49e949b9f207ae59725d3ed48" prefix=" " category="inline-code"></block> 參數或在 <block ref="259fe82e12a866f01123927480c7851b" prefix=" " category="inline-code"></block> 檔案中自動選擇 ONTAP 版本。</block>
+  <block id="5ffdabc76a252a34c19dc9bbdcd1ff5b" category="list-text">報告現在包含建議的韌體版本。</block>
 </blocks>
